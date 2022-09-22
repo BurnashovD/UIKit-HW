@@ -135,6 +135,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5CD083228DB9DD5006CBCD8 /* Build configuration list for PBXNativeTarget "UIKit-HW" */;
 			buildPhases = (
+				A5F52C1628DCF38100F2E209 /* Swiftlint */,
 				A5CD080428DB9DD4006CBCD8 /* Sources */,
 				A5CD080528DB9DD4006CBCD8 /* Frameworks */,
 				A5CD080628DB9DD4006CBCD8 /* Resources */,
@@ -252,6 +253,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A5F52C1628DCF38100F2E209 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5CD080428DB9DD4006CBCD8 /* Sources */ = {
