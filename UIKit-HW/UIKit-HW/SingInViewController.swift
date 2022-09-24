@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SingInViewController: UIViewController {
     
-    @IBOutlet weak var isngInButton: UIButton!
+    @IBOutlet weak var singInButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
     @IBOutlet weak var passwordText: UITextField!
     
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
         passwordText.isSecureTextEntry = true
-        isngInButton.layer.cornerRadius = 25
+        singInButton.layer.cornerRadius = 25
     }
 
 

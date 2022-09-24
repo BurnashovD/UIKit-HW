@@ -7,22 +7,20 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class RegistrationViewController: UIViewController {
 
     let switcherBook = UISwitch()
     let labelQuestion = UILabel()
     let payLabel = UILabel()
     let paySwitcher = UISwitch()
     let billLabel = UIButton()
-    let thirdVC = ViewController3()
+    let thirdVC = BillViewController()
     
     @IBOutlet weak var guestLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
         self.switcherBook.frame = CGRect(x: 307, y: 580, width: 0, height: 0)
         self.view.addSubview(switcherBook)
         
@@ -48,16 +46,14 @@ class ViewController2: UIViewController {
         self.goToNext()
     }
     func goToNext() {
-        let alertController = UIAlertController(title: "Выставить счет?", message: nil, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Назад", style: .default) { (action) in
-            
-        }
-        let secondAction = UIAlertAction(title: "Да", style: .default) { [self] (secAction) in
+        let GoNextAlertController = UIAlertController(title: "Выставить счет?", message: nil, preferredStyle: .alert)
+        let GoBackAlertAction = UIAlertAction(title: "Назад", style: .default)
+        let GoNextAlertAction = UIAlertAction(title: "Да", style: .default) { [self] (secAction) in
             self.present(self.thirdVC, animated: true, completion: nil)
         }
-        alertController.addAction(alertAction)
-        alertController.addAction(secondAction)
-        present(alertController, animated: true, completion: nil)
+        GoNextAlertController.addAction(GoBackAlertAction)
+        GoNextAlertController.addAction(GoNextAlertAction)
+        present(GoNextAlertController, animated: true, completion: nil)
     }
 
 }

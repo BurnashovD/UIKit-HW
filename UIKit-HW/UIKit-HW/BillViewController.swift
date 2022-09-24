@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController3: UIViewController {
+class BillViewController: UIViewController {
 
     @IBOutlet weak var payButton: UIButton!
     override func viewDidLoad() {
