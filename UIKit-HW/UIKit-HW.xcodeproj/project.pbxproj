@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A5CCA69828DE31B000E2A8F8 /* ChareInk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5CCA69728DE31B000E2A8F8 /* ChareInk-Bold.ttf */; };
 		A5CCA69A28DF4F9800E2A8F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA69928DF4F9800E2A8F8 /* MainViewController.swift */; };
+		A5CCA69C28DFBDF600E2A8F8 /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA69B28DFBDF600E2A8F8 /* NewProfileViewController.swift */; };
 		A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */; };
 		A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */; };
 		A5CD081028DB9DD4006CBCD8 /* SingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080F28DB9DD4006CBCD8 /* SingInViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		A5CCA69728DE31B000E2A8F8 /* ChareInk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ChareInk-Bold.ttf"; path = "../../../../../../Downloads/ChareInk/ChareInk-Bold.ttf"; sourceTree = "<group>"; };
 		A5CCA69928DF4F9800E2A8F8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A5CCA69B28DFBDF600E2A8F8 /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
 		A5CD080828DB9DD4006CBCD8 /* UIKit-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */,
 				A5CD080F28DB9DD4006CBCD8 /* SingInViewController.swift */,
 				A5CCA69928DF4F9800E2A8F8 /* MainViewController.swift */,
+				A5CCA69B28DFBDF600E2A8F8 /* NewProfileViewController.swift */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
 				A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */,
 				A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */,
@@ -299,6 +302,7 @@
 				A5CD081028DB9DD4006CBCD8 /* SingInViewController.swift in Sources */,
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
+				A5CCA69C28DFBDF600E2A8F8 /* NewProfileViewController.swift in Sources */,
 				A5CCA69A28DF4F9800E2A8F8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

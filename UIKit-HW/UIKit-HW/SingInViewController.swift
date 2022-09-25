@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var logInButtomn: UIButton!
     var logoLabel = UILabel()
     let contureLogoLabel = UIView()
     let imageName = "baloon"
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     let logInButton = UIButton()
     let faceIdSwitcher = UISwitch()
     let labelForFaceID = UILabel()
+    let showPasswordButton = UIButton()
+    let eyeImage = UIImage(named: "eye")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,10 +76,8 @@ class ViewController: UIViewController {
         textForEmail.autocorrectionType = .no
         textForEmail.addTarget(self, action: #selector(getEmail), for: .editingDidEnd)
         
-        
         firstLine.frame = CGRect(x: 45, y: 483, width: 330, height: 1)
         firstLine.backgroundColor = UIColor.lightGray
-        
         
         self.view.addSubview(textForEmail)
         self.view.addSubview(firstLine)
@@ -101,14 +102,11 @@ class ViewController: UIViewController {
         self.view.addSubview(secondLine)
         
         //MARK: - Log In Button
-        logInButton.frame = CGRect(x: 0, y: 0, width: 240, height: 50)
-        logInButton.center = CGPoint(x: 200, y: 730)
-        logInButton.backgroundColor = UIColor.lightGray
-        logInButton.layer.cornerRadius = 20
-        logInButton.setTitle("Войти", for: .normal)
-        logInButton.addTarget(self, action: #selector(goToMainViewController), for: .touchUpInside)
+        logInButtomn.backgroundColor = UIColor.lightGray
+        logInButtomn.layer.cornerRadius = 20
+        logInButtomn.setTitle("Войти", for: .normal)
         
-        self.view.addSubview(logInButton)
+        self.view.addSubview(logInButtomn)
         
         //MARK: - Add switch to FaceID
         faceIdSwitcher.frame = CGRect(x: 300, y: 630, width: 100, height: 100)
@@ -122,8 +120,16 @@ class ViewController: UIViewController {
         
         self.view.addSubview(labelForFaceID)
         
+        //MARK: - Show or hide password button
+        showPasswordButton.frame = CGRect(x: 330, y: 550, width: 35, height: 35)
+        showPasswordButton.setBackgroundImage(eyeImage, for: .normal)
+        showPasswordButton.addTarget(self, action: #selector(showPassword), for: .touchUpInside)
+        showPasswordButton.addTarget(self, action: #selector(hidePassword), for: .touchDown)
+        
+        self.view.addSubview(showPasswordButton)
+        
     }
-
+//MARK: - Methods prints email and password to consol
     @objc func getEmail() {
         print("Email: \(self.textForEmail.text ?? "")")
     }
@@ -131,13 +137,20 @@ class ViewController: UIViewController {
     @objc func getPassword() {
         print("Password: \(self.textForPassword.text ?? "")")
     }
-    
+    //MARK: - Present Main VC
     @objc func goToMainViewController() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let mainVC = storyBoard.instantiateViewController(identifier: "MainViewController") as! MainViewController
         let navigation = UINavigationController(rootViewController: mainVC)
         self.view.addSubview(navigation.view)
         navigation.didMove(toParent: self)
+    }
+    //MARK: - Show and hide password
+    @objc func showPassword() {
+        textForPassword.isSecureTextEntry = true
+    }
+    @objc func hidePassword() {
+        textForPassword.isSecureTextEntry = false
     }
 }
 

@@ -11,29 +11,33 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SingInViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mE-0a-kCH">
-                                <rect key="frame" x="203" y="428" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glt-TJ-9nD">
-                                <rect key="frame" x="182" y="300" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNn-zE-Mgp">
+                                <rect key="frame" x="87" y="713" width="240" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.85194733509999998" blue="0.92779407089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <segue destination="N8L-tV-xzT" kind="presentation" modalPresentationStyle="fullScreen" id="BdQ-6X-2U0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.97372843078331528" green="1" blue="0.93317582343019201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mNn-zE-Mgp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="669" id="LAx-vb-RO7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mNn-zE-Mgp" secondAttribute="trailing" constant="87" id="Mfx-eO-efw"/>
+                            <constraint firstItem="mNn-zE-Mgp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="cBP-N2-OGS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mNn-zE-Mgp" secondAttribute="bottom" constant="99" id="xap-O8-Bex"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="LogInButtomn" destination="mNn-zE-Mgp" id="Scr-hO-of9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,13 +50,49 @@
                     <view key="view" contentMode="scaleToFill" id="ipV-g3-KSu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eqc-wR-uAG">
+                                <rect key="frame" x="0.0" y="32" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Birthday" id="mqY-zd-pvM">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="g9c-0S-tMm">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="lj5-DP-m2V"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mWD-YR-Ra2">
+                                            <connections>
+                                                <segue destination="k4X-jd-5Dh" kind="show" id="Db2-82-RTx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cUB-uH-Ks7"/>
                         <color key="backgroundColor" red="0.97372843080000004" green="1" blue="0.93317582340000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kj9-3A-8oi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1U-iC-gzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="64"/>
+            <point key="canvasLocation" x="898.55072463768124" y="63.616071428571423"/>
+        </scene>
+        <!--New Profile View Controller-->
+        <scene sceneID="xha-3q-HmP">
+            <objects>
+                <viewController storyboardIdentifier="NewProfileViewController" id="k4X-jd-5Dh" customClass="NewProfileViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tru-FI-2xG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kbg-SE-an6"/>
+                        <color key="backgroundColor" red="0.97372843080000004" green="1" blue="0.93317582340000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ph-Xe-8vr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794" y="64"/>
         </scene>
     </scenes>
 </document>
