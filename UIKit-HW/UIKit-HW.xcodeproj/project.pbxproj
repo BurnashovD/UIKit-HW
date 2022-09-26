@@ -7,14 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5CCA69E28E116F400E2A8F8 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA69D28E116F400E2A8F8 /* PlayerViewController.swift */; };
-		A5CCA6A028E1174700E2A8F8 /* SecondSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA69F28E1174700E2A8F8 /* SecondSongViewController.swift */; };
-		A5CCA6A228E1232000E2A8F8 /* pacany.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5CCA6A128E1232000E2A8F8 /* pacany.mp3 */; };
-		A5CCA6A728E12EE400E2A8F8 /* приходите.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5CCA6A928E12EE400E2A8F8 /* приходите.mp3 */; };
-		A5CCA6AA28E12EED00E2A8F8 /* prihodite.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5CCA6AC28E12EED00E2A8F8 /* prihodite.mp3 */; };
 		A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */; };
 		A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */; };
-		A5CD081028DB9DD4006CBCD8 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080F28DB9DD4006CBCD8 /* LibraryViewController.swift */; };
+		A5CD081028DB9DD4006CBCD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080F28DB9DD4006CBCD8 /* ViewController.swift */; };
 		A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081128DB9DD4006CBCD8 /* Main.storyboard */; };
 		A5CD081528DB9DD5006CBCD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */; };
 		A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */; };
@@ -40,15 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A5CCA69D28E116F400E2A8F8 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		A5CCA69F28E1174700E2A8F8 /* SecondSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSongViewController.swift; sourceTree = "<group>"; };
-		A5CCA6A128E1232000E2A8F8 /* pacany.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pacany.mp3; path = ../../../../../Downloads/pacany.mp3; sourceTree = "<group>"; };
-		A5CCA6A828E12EE400E2A8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Base; path = "Base.lproj/приходите.mp3"; sourceTree = "<group>"; };
-		A5CCA6AE28E12F2500E2A8F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = en; path = en.lproj/prihodite.mp3; sourceTree = "<group>"; };
 		A5CD080828DB9DD4006CBCD8 /* UIKit-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5CD080F28DB9DD4006CBCD8 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		A5CD080F28DB9DD4006CBCD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5CD081228DB9DD4006CBCD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5CD081728DB9DD5006CBCD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,14 +101,9 @@
 			children = (
 				A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */,
 				A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */,
-				A5CD080F28DB9DD4006CBCD8 /* LibraryViewController.swift */,
-				A5CCA69D28E116F400E2A8F8 /* PlayerViewController.swift */,
-				A5CCA69F28E1174700E2A8F8 /* SecondSongViewController.swift */,
+				A5CD080F28DB9DD4006CBCD8 /* ViewController.swift */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
 				A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */,
-				A5CCA6A928E12EE400E2A8F8 /* приходите.mp3 */,
-				A5CCA6AC28E12EED00E2A8F8 /* prihodite.mp3 */,
-				A5CCA6A128E1232000E2A8F8 /* pacany.mp3 */,
 				A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */,
 				A5CD081928DB9DD5006CBCD8 /* Info.plist */,
 			);
@@ -247,11 +232,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5CCA6AA28E12EED00E2A8F8 /* prihodite.mp3 in Resources */,
 				A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */,
-				A5CCA6A228E1232000E2A8F8 /* pacany.mp3 in Resources */,
 				A5CD081528DB9DD5006CBCD8 /* Assets.xcassets in Resources */,
-				A5CCA6A728E12EE400E2A8F8 /* приходите.mp3 in Resources */,
 				A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,9 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5CD081028DB9DD4006CBCD8 /* LibraryViewController.swift in Sources */,
-				A5CCA6A028E1174700E2A8F8 /* SecondSongViewController.swift in Sources */,
-				A5CCA69E28E116F400E2A8F8 /* PlayerViewController.swift in Sources */,
+				A5CD081028DB9DD4006CBCD8 /* ViewController.swift in Sources */,
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
 			);
@@ -338,24 +318,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A5CCA6A928E12EE400E2A8F8 /* приходите.mp3 */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5CCA6A828E12EE400E2A8F8 /* Base */,
-			);
-			name = "приходите.mp3";
-			path = ../../../../../Downloads;
-			sourceTree = "<group>";
-		};
-		A5CCA6AC28E12EED00E2A8F8 /* prihodite.mp3 */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5CCA6AE28E12F2500E2A8F8 /* en */,
-			);
-			name = prihodite.mp3;
-			path = "/Users/daniil/Desktop/IOS/UIKit-HW/UIKit-HW/../../../../Downloads";
-			sourceTree = "<absolute>";
-		};
 		A5CD081128DB9DD4006CBCD8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
