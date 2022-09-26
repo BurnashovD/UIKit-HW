@@ -10,13 +10,8 @@ import UIKit
 class BillViewController: UIViewController {
 
     @IBOutlet weak var payButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
-    
-
-    
-
 }
