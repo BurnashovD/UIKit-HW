@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "08A1331E-CBFE-4CB4-94F1-00E163125533"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B70437B0-128B-457D-94CA-579FC4CC2ACE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UIKit-HW/MathAndGameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "MathAndGameViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "B70437B0-128B-457D-94CA-579FC4CC2ACE - f44e3d8b3f906038"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIKit_HW.MathAndGameViewController.guessLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "UIKit-HW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniil/Desktop/IOS/UIKit-HW/UIKit-HW/UIKit-HW/MathAndGameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "B70437B0-128B-457D-94CA-579FC4CC2ACE - 94c8c2fdb7fd8c24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIKit_HW.MathAndGameViewController.guessLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "UIKit-HW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniil/Desktop/IOS/UIKit-HW/UIKit-HW/UIKit-HW/MathAndGameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "B70437B0-128B-457D-94CA-579FC4CC2ACE - cb2dce75efdd8b07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIKit_HW.MathAndGameViewController.guessLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "UIKit-HW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniil/Desktop/IOS/UIKit-HW/UIKit-HW/UIKit-HW/MathAndGameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "B70437B0-128B-457D-94CA-579FC4CC2ACE - 965a8dfce4ec18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIKit_HW.MathAndGameViewController.guessLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "UIKit-HW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniil/Desktop/IOS/UIKit-HW/UIKit-HW/UIKit-HW/MathAndGameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "B70437B0-128B-457D-94CA-579FC4CC2ACE - 473f584fedf72b1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIKit_HW.MathAndGameViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UIKit_HW.MathAndGameViewController"
+                  moduleName = "UIKit-HW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniil/Desktop/IOS/UIKit-HW/UIKit-HW/UIKit-HW/MathAndGameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "B70437B0-128B-457D-94CA-579FC4CC2ACE - 3e9ebf1bd23349f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIKit_HW.MathAndGameViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UIKit_HW.MathAndGameViewController&gt;"
+                  moduleName = "UIKit-HW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniil/Desktop/IOS/UIKit-HW/UIKit-HW/UIKit-HW/MathAndGameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
