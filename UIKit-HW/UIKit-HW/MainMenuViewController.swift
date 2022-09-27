@@ -18,15 +18,17 @@ class MainMenuViewController: UIViewController {
     let vansShoesImageView = UIImageView()
     let adidasShoesImageView = UIImageView()
     let secondNikeShoesImageView = UIImageView()
+    let spiderManImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - Profile button on left side
         profileButton.frame = CGRect(x: 17, y: 45, width: 55, height: 55)
-        profileButton.setImage(UIImage(named: "profileImage"), for: .normal)
-        profileButton.contentVerticalAlignment = .fill
-        profileButton.contentHorizontalAlignment = .fill
-        profileButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        profileButton.setImage(UIImage(named: "spiderLogo"), for: .normal)
+//        profileButton.contentVerticalAlignment = .fill
+//        profileButton.contentHorizontalAlignment = .fill
+//        profileButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        profileButton.addTarget(self, action: #selector(segueOnProfileVC), for: .touchUpInside)
         view.addSubview(profileButton)
         // MARK: - Large image on menu
         nikeCasualImageView.image = UIImage(named: "nikeCasual")
@@ -73,6 +75,10 @@ class MainMenuViewController: UIViewController {
         secondNikeShoesImageView.image = UIImage(named: "nikeShoes2")
         secondNikeShoesImageView.frame = CGRect(x: 235, y: 620, width: 105, height: 90)
         view.addSubview(secondNikeShoesImageView)
+        //MARK: - SpiderMan image
+        spiderManImageView.image = UIImage(named: "spiderMan")
+        spiderManImageView.frame = CGRect(x: 270, y: 10, width: 100, height: 100)
+        view.addSubview(spiderManImageView)
     }
     // MARK: - Method to segue on Nike VeiwController
     @objc func segueOnNikeVC() {
@@ -89,5 +95,9 @@ class MainMenuViewController: UIViewController {
     // MARK: - Method to segue on Orange Nike VeiwController
     @objc func segueOnOrangeNikeVC() {
         performSegue(withIdentifier: "orangeNikeSegue", sender: self)
+    }
+    //MARK: - Method to segue on Profile VeiwController
+    @objc func segueOnProfileVC() {
+        performSegue(withIdentifier: "profile", sender: self)
     }
 }

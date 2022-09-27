@@ -25,6 +25,7 @@
                         <segue destination="sz5-lv-Gsd" kind="show" identifier="vansSegue" id="8Yh-Sg-quZ"/>
                         <segue destination="27k-i4-gWq" kind="show" identifier="adidasSegue" id="HXO-9L-Efv"/>
                         <segue destination="NNb-yX-5LV" kind="show" identifier="orangeNikeSegue" id="GNz-LC-X49"/>
+                        <segue destination="8TG-UP-dco" kind="presentation" identifier="profile" id="wR7-1G-Ajt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -46,6 +47,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bc6-Nn-pTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="818" y="-617"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="WBV-JF-lac">
+            <objects>
+                <viewController id="8TG-UP-dco" customClass="ProfileViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vc2-Rv-5uG">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pCZ-ba-G6l"/>
+                        <color key="backgroundColor" red="0.14192708333333337" green="0.14192708333333337" blue="0.14192708333333337" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHd-OJ-01C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-667"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="H01-7N-e7k">
+            <objects>
+                <viewController id="U7S-6T-XzR" customClass="CartViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Id4-fr-Cb7">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GB8-6r-VQX"/>
+                        <color key="backgroundColor" red="0.14214410720000001" green="0.14214410720000001" blue="0.14214410720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyn-pV-jNr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3063" y="-734"/>
         </scene>
         <!--Vans Shoes Menu View Controller-->
         <scene sceneID="8M1-1N-Mbi">
