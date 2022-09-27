@@ -7,15 +7,16 @@
 
 import UIKit
 import AVFoundation
-
+// Плеер первой песни
 class PlayerViewController: UIViewController {
 
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var durationSlider: UISlider!
     @IBOutlet weak var timeFromStartLabel: UILabel!
+    @IBOutlet weak var krugImage: UIImageView!
     var player = AVAudioPlayer()
     var activityVC: UIActivityViewController? = nil
-    @IBOutlet weak var krugImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         krugImage.layer.cornerRadius = 8
