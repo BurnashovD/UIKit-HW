@@ -9,12 +9,33 @@
 /* Begin PBXBuildFile section */
 		A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */; };
 		A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */; };
-		A5CD081028DB9DD4006CBCD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080F28DB9DD4006CBCD8 /* ViewController.swift */; };
+		A5CD081028DB9DD4006CBCD8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080F28DB9DD4006CBCD8 /* MainMenuViewController.swift */; };
 		A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081128DB9DD4006CBCD8 /* Main.storyboard */; };
 		A5CD081528DB9DD5006CBCD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */; };
 		A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */; };
 		A5CD082328DB9DD5006CBCD8 /* UIKit_HWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082228DB9DD5006CBCD8 /* UIKit_HWTests.swift */; };
 		A5CD082E28DB9DD5006CBCD8 /* UIKit_HWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */; };
+		A5FC9AD528E204DA00075AC9 /* NikeShoesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9AD428E204DA00075AC9 /* NikeShoesMenuViewController.swift */; };
+		A5FC9AD728E204FA00075AC9 /* VansShoesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9AD628E204FA00075AC9 /* VansShoesMenuViewController.swift */; };
+		A5FC9AD928E2052000075AC9 /* AdidasShoesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9AD828E2052000075AC9 /* AdidasShoesMenuViewController.swift */; };
+		A5FC9ADB28E2054500075AC9 /* OrangeNikeShoesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9ADA28E2054500075AC9 /* OrangeNikeShoesMenuViewController.swift */; };
+		A5FC9ADE28E20C9B00075AC9 /* blackVans.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9ADD28E20C9B00075AC9 /* blackVans.jpeg */; };
+		A5FC9AE028E20CA400075AC9 /* chessVans.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9ADF28E20CA400075AC9 /* chessVans.jpeg */; };
+		A5FC9AE228E20CA900075AC9 /* pinkVans.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AE128E20CA900075AC9 /* pinkVans.jpeg */; };
+		A5FC9AE628E26DC900075AC9 /* blackNike.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AE528E26DC900075AC9 /* blackNike.jpeg */; };
+		A5FC9AE828E26DD000075AC9 /* whiteNike.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AE728E26DD000075AC9 /* whiteNike.jpeg */; };
+		A5FC9AEA28E26DD700075AC9 /* greenNike.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AE928E26DD700075AC9 /* greenNike.jpeg */; };
+		A5FC9AEC28E270BC00075AC9 /* whiteNikeShoes.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AEB28E270BC00075AC9 /* whiteNikeShoes.jpeg */; };
+		A5FC9AEE28E2715D00075AC9 /* nikeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AED28E2715C00075AC9 /* nikeLogo.png */; };
+		A5FC9AF128E2732E00075AC9 /* blackNikeee.png in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AF028E2732E00075AC9 /* blackNikeee.png */; };
+		A5FC9AF428E27D4700075AC9 /* blackAdidas.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AF328E27D4700075AC9 /* blackAdidas.jpeg */; };
+		A5FC9AF728E27E8F00075AC9 /* whiteAdidass.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AF628E27E8F00075AC9 /* whiteAdidass.jpeg */; };
+		A5FC9AF928E27EEA00075AC9 /* blackAdidasss.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AF828E27EE900075AC9 /* blackAdidasss.jpeg */; };
+		A5FC9AFC28E281D500075AC9 /* orangeJordan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AFB28E281D500075AC9 /* orangeJordan.jpeg */; };
+		A5FC9AFE28E281DA00075AC9 /* blueJordan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AFD28E281DA00075AC9 /* blueJordan.jpeg */; };
+		A5FC9B0028E281DF00075AC9 /* whiteJordan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AFF28E281DF00075AC9 /* whiteJordan.jpeg */; };
+		A5FC9B0228E2832200075AC9 /* grayJordan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9B0128E2832200075AC9 /* grayJordan.jpeg */; };
+		A5FC9B0428E285B500075AC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0328E285B500075AC9 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +59,7 @@
 		A5CD080828DB9DD4006CBCD8 /* UIKit-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5CD080F28DB9DD4006CBCD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5CD080F28DB9DD4006CBCD8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		A5CD081228DB9DD4006CBCD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5CD081728DB9DD5006CBCD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +70,29 @@
 		A5CD082928DB9DD5006CBCD8 /* UIKit-HWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-HWUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_HWUITests.swift; sourceTree = "<group>"; };
 		A5CD082F28DB9DD5006CBCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5FC9AD428E204DA00075AC9 /* NikeShoesMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikeShoesMenuViewController.swift; sourceTree = "<group>"; };
+		A5FC9AD628E204FA00075AC9 /* VansShoesMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VansShoesMenuViewController.swift; sourceTree = "<group>"; };
+		A5FC9AD828E2052000075AC9 /* AdidasShoesMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdidasShoesMenuViewController.swift; sourceTree = "<group>"; };
+		A5FC9ADA28E2054500075AC9 /* OrangeNikeShoesMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeNikeShoesMenuViewController.swift; sourceTree = "<group>"; };
+		A5FC9ADD28E20C9B00075AC9 /* blackVans.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackVans.jpeg; sourceTree = "<group>"; };
+		A5FC9ADF28E20CA400075AC9 /* chessVans.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chessVans.jpeg; sourceTree = "<group>"; };
+		A5FC9AE128E20CA900075AC9 /* pinkVans.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pinkVans.jpeg; sourceTree = "<group>"; };
+		A5FC9AE528E26DC900075AC9 /* blackNike.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackNike.jpeg; sourceTree = "<group>"; };
+		A5FC9AE728E26DD000075AC9 /* whiteNike.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteNike.jpeg; sourceTree = "<group>"; };
+		A5FC9AE928E26DD700075AC9 /* greenNike.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = greenNike.jpeg; sourceTree = "<group>"; };
+		A5FC9AEB28E270BC00075AC9 /* whiteNikeShoes.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteNikeShoes.jpeg; sourceTree = "<group>"; };
+		A5FC9AED28E2715C00075AC9 /* nikeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nikeLogo.png; sourceTree = "<group>"; };
+		A5FC9AEF28E2729800075AC9 /* blackNikee.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackNikee.jpeg; sourceTree = "<group>"; };
+		A5FC9AF028E2732E00075AC9 /* blackNikeee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackNikeee.png; sourceTree = "<group>"; };
+		A5FC9AF328E27D4700075AC9 /* blackAdidas.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackAdidas.jpeg; sourceTree = "<group>"; };
+		A5FC9AF528E27D4E00075AC9 /* whiteAdidas.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = whiteAdidas.webp; sourceTree = "<group>"; };
+		A5FC9AF628E27E8F00075AC9 /* whiteAdidass.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteAdidass.jpeg; sourceTree = "<group>"; };
+		A5FC9AF828E27EE900075AC9 /* blackAdidasss.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackAdidasss.jpeg; sourceTree = "<group>"; };
+		A5FC9AFB28E281D500075AC9 /* orangeJordan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orangeJordan.jpeg; sourceTree = "<group>"; };
+		A5FC9AFD28E281DA00075AC9 /* blueJordan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueJordan.jpeg; sourceTree = "<group>"; };
+		A5FC9AFF28E281DF00075AC9 /* whiteJordan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteJordan.jpeg; sourceTree = "<group>"; };
+		A5FC9B0128E2832200075AC9 /* grayJordan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grayJordan.jpeg; sourceTree = "<group>"; };
+		A5FC9B0328E285B500075AC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +143,16 @@
 		A5CD080A28DB9DD4006CBCD8 /* UIKit-HW */ = {
 			isa = PBXGroup;
 			children = (
+				A5FC9ADC28E207BB00075AC9 /* Shoes VC */,
 				A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */,
 				A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */,
-				A5CD080F28DB9DD4006CBCD8 /* ViewController.swift */,
+				A5CD080F28DB9DD4006CBCD8 /* MainMenuViewController.swift */,
+				A5FC9B0328E285B500075AC9 /* ProfileViewController.swift */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
+				A5FC9AFA28E281C400075AC9 /* Jordan Image */,
+				A5FC9AF228E27D2E00075AC9 /* Adidas Images */,
+				A5FC9AE428E26CE400075AC9 /* Nike Images */,
+				A5FC9AE328E20CB700075AC9 /* Vans Images */,
 				A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */,
 				A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */,
 				A5CD081928DB9DD5006CBCD8 /* Info.plist */,
@@ -126,6 +176,63 @@
 				A5CD082F28DB9DD5006CBCD8 /* Info.plist */,
 			);
 			path = "UIKit-HWUITests";
+			sourceTree = "<group>";
+		};
+		A5FC9ADC28E207BB00075AC9 /* Shoes VC */ = {
+			isa = PBXGroup;
+			children = (
+				A5FC9ADA28E2054500075AC9 /* OrangeNikeShoesMenuViewController.swift */,
+				A5FC9AD828E2052000075AC9 /* AdidasShoesMenuViewController.swift */,
+				A5FC9AD628E204FA00075AC9 /* VansShoesMenuViewController.swift */,
+				A5FC9AD428E204DA00075AC9 /* NikeShoesMenuViewController.swift */,
+			);
+			path = "Shoes VC";
+			sourceTree = "<group>";
+		};
+		A5FC9AE328E20CB700075AC9 /* Vans Images */ = {
+			isa = PBXGroup;
+			children = (
+				A5FC9ADF28E20CA400075AC9 /* chessVans.jpeg */,
+				A5FC9ADD28E20C9B00075AC9 /* blackVans.jpeg */,
+				A5FC9AE128E20CA900075AC9 /* pinkVans.jpeg */,
+			);
+			path = "Vans Images";
+			sourceTree = "<group>";
+		};
+		A5FC9AE428E26CE400075AC9 /* Nike Images */ = {
+			isa = PBXGroup;
+			children = (
+				A5FC9AED28E2715C00075AC9 /* nikeLogo.png */,
+				A5FC9AEF28E2729800075AC9 /* blackNikee.jpeg */,
+				A5FC9AF028E2732E00075AC9 /* blackNikeee.png */,
+				A5FC9AEB28E270BC00075AC9 /* whiteNikeShoes.jpeg */,
+				A5FC9AE928E26DD700075AC9 /* greenNike.jpeg */,
+				A5FC9AE728E26DD000075AC9 /* whiteNike.jpeg */,
+				A5FC9AE528E26DC900075AC9 /* blackNike.jpeg */,
+			);
+			path = "Nike Images";
+			sourceTree = "<group>";
+		};
+		A5FC9AF228E27D2E00075AC9 /* Adidas Images */ = {
+			isa = PBXGroup;
+			children = (
+				A5FC9AF628E27E8F00075AC9 /* whiteAdidass.jpeg */,
+				A5FC9AF828E27EE900075AC9 /* blackAdidasss.jpeg */,
+				A5FC9AF328E27D4700075AC9 /* blackAdidas.jpeg */,
+				A5FC9AF528E27D4E00075AC9 /* whiteAdidas.webp */,
+			);
+			path = "Adidas Images";
+			sourceTree = "<group>";
+		};
+		A5FC9AFA28E281C400075AC9 /* Jordan Image */ = {
+			isa = PBXGroup;
+			children = (
+				A5FC9AFF28E281DF00075AC9 /* whiteJordan.jpeg */,
+				A5FC9AFB28E281D500075AC9 /* orangeJordan.jpeg */,
+				A5FC9AFD28E281DA00075AC9 /* blueJordan.jpeg */,
+				A5FC9B0128E2832200075AC9 /* grayJordan.jpeg */,
+			);
+			path = "Jordan Image";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +339,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FC9AF128E2732E00075AC9 /* blackNikeee.png in Resources */,
+				A5FC9AE628E26DC900075AC9 /* blackNike.jpeg in Resources */,
+				A5FC9AEE28E2715D00075AC9 /* nikeLogo.png in Resources */,
 				A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */,
+				A5FC9AE828E26DD000075AC9 /* whiteNike.jpeg in Resources */,
+				A5FC9AEC28E270BC00075AC9 /* whiteNikeShoes.jpeg in Resources */,
+				A5FC9AF928E27EEA00075AC9 /* blackAdidasss.jpeg in Resources */,
+				A5FC9AF428E27D4700075AC9 /* blackAdidas.jpeg in Resources */,
+				A5FC9AF728E27E8F00075AC9 /* whiteAdidass.jpeg in Resources */,
+				A5FC9B0028E281DF00075AC9 /* whiteJordan.jpeg in Resources */,
+				A5FC9AE228E20CA900075AC9 /* pinkVans.jpeg in Resources */,
+				A5FC9AFE28E281DA00075AC9 /* blueJordan.jpeg in Resources */,
+				A5FC9AEA28E26DD700075AC9 /* greenNike.jpeg in Resources */,
+				A5FC9AE028E20CA400075AC9 /* chessVans.jpeg in Resources */,
 				A5CD081528DB9DD5006CBCD8 /* Assets.xcassets in Resources */,
+				A5FC9B0228E2832200075AC9 /* grayJordan.jpeg in Resources */,
 				A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */,
+				A5FC9ADE28E20C9B00075AC9 /* blackVans.jpeg in Resources */,
+				A5FC9AFC28E281D500075AC9 /* orangeJordan.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +394,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "
+
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -280,9 +405,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5CD081028DB9DD4006CBCD8 /* ViewController.swift in Sources */,
+				A5FC9AD928E2052000075AC9 /* AdidasShoesMenuViewController.swift in Sources */,
+				A5FC9ADB28E2054500075AC9 /* OrangeNikeShoesMenuViewController.swift in Sources */,
+				A5CD081028DB9DD4006CBCD8 /* MainMenuViewController.swift in Sources */,
+				A5FC9AD728E204FA00075AC9 /* VansShoesMenuViewController.swift in Sources */,
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
+				A5FC9B0428E285B500075AC9 /* ProfileViewController.swift in Sources */,
+				A5FC9AD528E204DA00075AC9 /* NikeShoesMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

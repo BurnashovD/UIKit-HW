@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yND-cV-keH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,25 +9,130 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Library View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LibraryViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AdP-9Q-9LC"/>
+                    <connections>
+                        <segue destination="UNJ-eQ-hBL" kind="show" identifier="nikeSegue" id="fD9-AR-kSN"/>
+                        <segue destination="sz5-lv-Gsd" kind="show" identifier="vansSegue" id="8Yh-Sg-quZ"/>
+                        <segue destination="27k-i4-gWq" kind="show" identifier="adidasSegue" id="HXO-9L-Efv"/>
+                        <segue destination="NNb-yX-5LV" kind="show" identifier="orangeNikeSegue" id="GNz-LC-X49"/>
+                        <segue destination="8TG-UP-dco" kind="presentation" identifier="profile" id="wR7-1G-Ajt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="63.616071428571423"/>
+            <point key="canvasLocation" x="947.69230769230762" y="63.270142180094787"/>
+        </scene>
+        <!--Nike Shoes Menu View Controller-->
+        <scene sceneID="kMI-NU-lhg">
+            <objects>
+                <viewController id="UNJ-eQ-hBL" customClass="NikeShoesMenuViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I2V-do-6Q0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HRp-vm-5BG"/>
+                        <color key="backgroundColor" red="0.13372634093027608" green="0.13707642308370371" blue="0.15552208798181821" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EbN-Av-HI1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bc6-Nn-pTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816.92307692307691" y="-617.06161137440756"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="WBV-JF-lac">
+            <objects>
+                <viewController id="8TG-UP-dco" customClass="ProfileViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vc2-Rv-5uG">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pCZ-ba-G6l"/>
+                        <color key="backgroundColor" red="0.14192708333333337" green="0.14192708333333337" blue="0.14192708333333337" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHd-OJ-01C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923.0769230769231" y="-667.53554502369661"/>
+        </scene>
+        <!--Vans Shoes Menu View Controller-->
+        <scene sceneID="8M1-1N-Mbi">
+            <objects>
+                <viewController id="sz5-lv-Gsd" customClass="VansShoesMenuViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpA-ch-THR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gWS-yZ-Sjk"/>
+                        <color key="backgroundColor" red="0.13372634089999999" green="0.13707642310000001" blue="0.155522088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="93H-kG-vRW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3P-og-h3Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2550.7692307692305" y="-3.5545023696682461"/>
+        </scene>
+        <!--Adidas Shoes Menu View Controller-->
+        <scene sceneID="m7F-93-OIT">
+            <objects>
+                <viewController id="27k-i4-gWq" customClass="AdidasShoesMenuViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Fb-Mn-Zcv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="N7Q-MK-G1l"/>
+                        <color key="backgroundColor" red="0.13372634089999999" green="0.13707642310000001" blue="0.155522088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hzg-BZ-UXY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w3l-te-NS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2146.1538461538462" y="681.75355450236964"/>
+        </scene>
+        <!--Orange Nike Shoes Menu View Controller-->
+        <scene sceneID="qvd-gj-Hqu">
+            <objects>
+                <viewController id="NNb-yX-5LV" customClass="OrangeNikeShoesMenuViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mfW-aV-CXN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hoy-O1-q42"/>
+                        <color key="backgroundColor" red="0.13372634089999999" green="0.13707642310000001" blue="0.155522088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UqK-vf-EEF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aeo-Qq-f2k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="845"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Ga-Qb-uIe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yND-cV-keH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ufi-9D-oug">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SE3-RC-NXD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXc-Gf-xa5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.46153846153846" y="63.270142180094787"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
