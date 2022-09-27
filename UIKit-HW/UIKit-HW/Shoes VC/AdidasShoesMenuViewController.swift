@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Класс отвечает за страницу с кросовками Адидас
 class AdidasShoesMenuViewController: UIViewController {
     let adidasLogoImageView = UIImageView()
     let differentAdidasColors = ["Black", "White"]
@@ -104,14 +104,21 @@ class AdidasShoesMenuViewController: UIViewController {
             print(whatPersonCheck ?? "")
         }
     }
-    // MARK: - Alert add to cart
+    // MARK: - Alert add to cart or alert choose size
     @objc func addToCartAler() {
+        if shoesSizeTextField.text != "" {
         let alertController = UIAlertController(title: "Добавить в корзину?", message: nil, preferredStyle: .alert)
         let yesAlertAction = UIAlertAction(title: "Да", style: .default)
         let cancelAlertAction = UIAlertAction(title: "Отменить", style: .cancel)
         alertController.addAction(yesAlertAction)
         alertController.addAction(cancelAlertAction)
         present(alertController, animated: true, completion: nil)
+    } else if shoesSizeTextField.text == "" {
+        let emptyFieldAlertController = UIAlertController(title: "Сначала выберите размер", message: nil, preferredStyle: .alert)
+        let emptyFieldAlertAction = UIAlertAction(title: "Ok", style: .cancel)
+        emptyFieldAlertController.addAction(emptyFieldAlertAction)
+        present(emptyFieldAlertController, animated: true, completion: nil)
+        }
     }
 }
 // MARK: - Extension for Delegate and DataSource

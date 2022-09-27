@@ -18,16 +18,14 @@ class MainMenuViewController: UIViewController {
     let vansShoesImageView = UIImageView()
     let adidasShoesImageView = UIImageView()
     let secondNikeShoesImageView = UIImageView()
-    let spiderManImageView = UIImageView()
+    let spiderManImageView = UIButton()
+    var activityViewController: UIActivityViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - Profile button on left side
         profileButton.frame = CGRect(x: 17, y: 45, width: 55, height: 55)
         profileButton.setImage(UIImage(named: "spiderLogo"), for: .normal)
-//        profileButton.contentVerticalAlignment = .fill
-//        profileButton.contentHorizontalAlignment = .fill
-//        profileButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         profileButton.addTarget(self, action: #selector(segueOnProfileVC), for: .touchUpInside)
         view.addSubview(profileButton)
         // MARK: - Large image on menu
@@ -75,9 +73,10 @@ class MainMenuViewController: UIViewController {
         secondNikeShoesImageView.image = UIImage(named: "nikeShoes2")
         secondNikeShoesImageView.frame = CGRect(x: 235, y: 620, width: 105, height: 90)
         view.addSubview(secondNikeShoesImageView)
-        //MARK: - SpiderMan image
-        spiderManImageView.image = UIImage(named: "spiderMan")
+        // MARK: - SpiderMan image
+        spiderManImageView.setImage(UIImage(named: "spiderMan"), for: .normal)
         spiderManImageView.frame = CGRect(x: 270, y: 10, width: 100, height: 100)
+        spiderManImageView.addTarget(self, action: #selector(callActivityview), for: .touchUpInside)
         view.addSubview(spiderManImageView)
     }
     // MARK: - Method to segue on Nike VeiwController
@@ -100,4 +99,13 @@ class MainMenuViewController: UIViewController {
     @objc func segueOnProfileVC() {
         performSegue(withIdentifier: "profile", sender: self)
     }
+    // MARK: - Open ActivityViewController when touch a spider
+    @objc func callActivityview() {
+        activityViewController = UIActivityViewController(activityItems: ["Spider Man!!!"], applicationActivities: nil)
+        if activityViewController != nil {
+        present(activityViewController!, animated: true, completion: nil)
+        } else {
+            print("nothing in there")
+        }
+  }
 }

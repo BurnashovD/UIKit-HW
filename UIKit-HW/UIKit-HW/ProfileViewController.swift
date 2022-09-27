@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Класс отвечает за профиль пользователя
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let profilePhotoImageView = UIImageView()
     let changeProfilePhotoButton = UIButton()
@@ -39,7 +39,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         view.addSubview(changeProfilePhotoButton)
         // MARK: - Add button back to menu
         backToMainMenuButton.frame = CGRect(x: 15, y: 10, width: 50, height: 50)
-//        backToMainMenuButton.backgroundColor = .blue
         backToMainMenuButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
         backToMainMenuButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
         view.addSubview(backToMainMenuButton)
@@ -52,7 +51,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         // MARK: - Add TextField for name and line under
         nameTextField.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
         nameTextField.center = CGPoint(x: 200, y: 350)
-//        nameTextField.backgroundColor = .blue
         nameTextField.autocorrectionType = .no
         nameTextField.placeholder = "Введите имя"
         nameTextField.textAlignment = .center
@@ -106,7 +104,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         view.addSubview(notifyLabel)
         // MARK: - Add notify Switch
         notifySwitcher.frame = CGRect(x: 310, y: 600, width: 60, height: 60)
-        notifySwitcher.addTarget(self, action: #selector(<#T##@objc method#>), for: .valueChanged)
+        notifySwitcher.addTarget(self, action: #selector(alertAfterSwitcherIsOn), for: .valueChanged)
         view.addSubview(notifySwitcher)
     }
     // MARK: - Methods to change PP
@@ -144,17 +142,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: - Create Done Button for ToolBar and correct text style
     @objc func donePressed() {
         let dateFormat = DateFormatter()
-        dateFormat.dateStyle = .short
+        dateFormat.dateStyle = .medium
         dateFormat.timeStyle = .none
         self.dateTextField.text = dateFormat.string(from: datePicker.date)
         self.dateTextField.text = "\(datePicker.date)"
         self.view.endEditing(true)
     }
-    @objc func alertAfterSwitcherIsOn() {\
-//        let alertController = UIAlertController(title: "Спасибо!", message: nil, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default)
+    // MARK: - Add alert to switch
+    @objc func alertAfterSwitcherIsOn() {
+        let switchAlertController = UIAlertController(title: "Спасибо!", message: nil, preferredStyle: .alert)
+        let switchAlertAction = UIAlertAction(title: "Ок", style: .default)
+        switchAlertController.addAction(switchAlertAction)
         if notifySwitcher.isOn {
-            
+            present(switchAlertController, animated: true, completion: nil)
         }
     }
 }

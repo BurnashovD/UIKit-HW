@@ -63,21 +63,6 @@
             </objects>
             <point key="canvasLocation" x="1923.0769230769231" y="-667.53554502369661"/>
         </scene>
-        <!--Cart View Controller-->
-        <scene sceneID="H01-7N-e7k">
-            <objects>
-                <viewController id="U7S-6T-XzR" customClass="CartViewController" customModule="UIKit_HW" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Id4-fr-Cb7">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="GB8-6r-VQX"/>
-                        <color key="backgroundColor" red="0.14214410720000001" green="0.14214410720000001" blue="0.14214410720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iyn-pV-jNr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3063" y="-734"/>
-        </scene>
         <!--Vans Shoes Menu View Controller-->
         <scene sceneID="8M1-1N-Mbi">
             <objects>

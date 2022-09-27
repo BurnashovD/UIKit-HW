@@ -36,7 +36,6 @@
 		A5FC9B0028E281DF00075AC9 /* whiteJordan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9AFF28E281DF00075AC9 /* whiteJordan.jpeg */; };
 		A5FC9B0228E2832200075AC9 /* grayJordan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5FC9B0128E2832200075AC9 /* grayJordan.jpeg */; };
 		A5FC9B0428E285B500075AC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0328E285B500075AC9 /* ProfileViewController.swift */; };
-		A5FC9B0628E2957D00075AC9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0528E2957D00075AC9 /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +93,6 @@
 		A5FC9AFF28E281DF00075AC9 /* whiteJordan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteJordan.jpeg; sourceTree = "<group>"; };
 		A5FC9B0128E2832200075AC9 /* grayJordan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grayJordan.jpeg; sourceTree = "<group>"; };
 		A5FC9B0328E285B500075AC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		A5FC9B0528E2957D00075AC9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +148,6 @@
 				A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */,
 				A5CD080F28DB9DD4006CBCD8 /* MainMenuViewController.swift */,
 				A5FC9B0328E285B500075AC9 /* ProfileViewController.swift */,
-				A5FC9B0528E2957D00075AC9 /* CartViewController.swift */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
 				A5FC9AFA28E281C400075AC9 /* Jordan Image */,
 				A5FC9AF228E27D2E00075AC9 /* Adidas Images */,
@@ -415,7 +412,6 @@
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
 				A5FC9B0428E285B500075AC9 /* ProfileViewController.swift in Sources */,
-				A5FC9B0628E2957D00075AC9 /* CartViewController.swift in Sources */,
 				A5FC9AD528E204DA00075AC9 /* NikeShoesMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
