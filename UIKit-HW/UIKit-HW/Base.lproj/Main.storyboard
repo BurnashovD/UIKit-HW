@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bc6-Nn-pTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="-617"/>
+            <point key="canvasLocation" x="816.92307692307691" y="-617.06161137440756"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="WBV-JF-lac">
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHd-OJ-01C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-667"/>
+            <point key="canvasLocation" x="1923.0769230769231" y="-667.53554502369661"/>
         </scene>
         <!--Cart View Controller-->
         <scene sceneID="H01-7N-e7k">
