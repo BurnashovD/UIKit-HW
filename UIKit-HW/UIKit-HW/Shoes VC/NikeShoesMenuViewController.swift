@@ -22,7 +22,7 @@ class NikeShoesMenuViewController: UIViewController {
     let sizesArray = Array(38...44)
     let sizesPickerView = UIPickerView()
     let addToCartButton = UIButton()
-    let spiderManImageView = UIImageView()
+    let spiderManImageView = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class NikeShoesMenuViewController: UIViewController {
         colorsSegmentControl.backgroundColor = .darkGray
         colorsSegmentControl.addTarget(self, action: #selector(changeColorOfShoes), for: .valueChanged)
         view.addSubview(colorsSegmentControl)
-        // MARK: - Vans Logo
+        // MARK: - Nike Logo
         nikeLogoImageView.image = UIImage(named: "nikeLogo")
         nikeLogoImageView.frame = CGRect(x: 300, y: 160, width: 80, height: 50)
         view.addSubview(nikeLogoImageView)
@@ -95,8 +95,9 @@ class NikeShoesMenuViewController: UIViewController {
         addToCartButton.addTarget(self, action: #selector(addToCartAler), for: .touchUpInside)
         view.addSubview(addToCartButton)
         // MARK: - SpiderMan image
-        spiderManImageView.image = UIImage(named: "spiderMan")
-        spiderManImageView.frame = CGRect(x: 270, y: 20, width: 100, height: 110)
+        spiderManImageView.setImage(UIImage(named: "spiderMan"), for: .normal)
+        spiderManImageView.frame = CGRect(x: 270, y: 10, width: 100, height: 100)
+        spiderManImageView.addTarget(self, action: #selector(callActivityview), for: .touchUpInside)
         view.addSubview(spiderManImageView)
     }
     // MARK: - SegmentControl change color of shoes
@@ -123,6 +124,12 @@ class NikeShoesMenuViewController: UIViewController {
             emptyFieldAlertController.addAction(emptyFieldAlertAction)
             present(emptyFieldAlertController, animated: true, completion: nil)
         }
+    }
+    // MARK: - Open ActivityViewController when touch a spider
+    @objc func callActivityview() {
+        let facebookURL = NSURL(string: "https://ru-ru.facebook.com/")
+        let activityViewController = UIActivityViewController(activityItems: ["\(nameOfShoesLabel.text ?? "nil") \(modelOfShoesLabel.text ?? "nil") - Spider Shoes", facebookURL ?? "nil"], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
     }
 }
 // MARK: - Extension for Delegate and DataSource
