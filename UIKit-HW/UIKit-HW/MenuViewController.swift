@@ -1,5 +1,5 @@
 //
-//  CodeFromLessonViewController.swift
+//  MenuViewController.swift
 //  UIKit-HW
 //
 //  Created by Daniil on 28.09.2022.
@@ -7,9 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Food"
+
     }
+    
+
 }
