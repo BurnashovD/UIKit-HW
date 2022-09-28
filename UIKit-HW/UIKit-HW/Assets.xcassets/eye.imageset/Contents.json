@@ -2,16 +2,7 @@
   "images" : [
     {
       "filename" : "kisspng-web-design-vision-vector-eye-transparent-amp-png-clipart-fr-5d45fe90131e23.6767443615648682400783.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     }
   ],
   "info" : {

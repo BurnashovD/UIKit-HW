@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Контроллер со списком дней рождений
 class MainViewController: UIViewController {
     // constants for first profile
     var firstProfileNameLabel = UILabel()
@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     let fourProfileDateLabel = UILabel()
     let lineUnderFourProfile = UIView()
     let newProfileVC = NewProfileViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - First Profile

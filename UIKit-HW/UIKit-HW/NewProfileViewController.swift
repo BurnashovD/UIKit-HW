@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Контроллер отвечает за добавление нового профиля
 class NewProfileViewController: UIViewController {
     
     let picker = UIPickerView()
@@ -153,7 +153,7 @@ class NewProfileViewController: UIViewController {
                 }
         instagramAlertController.addTextField(configurationHandler: nil)
         instagramAlertController.addAction(instagramAlertAction)
-        self.present(instagramAlertController, animated: true, completion: nil)
+        present(instagramAlertController, animated: true, completion: nil)
     }
     // MARK: - add Button Method
      @objc func addNewProfileAndReturnToMainVC() -> String {
