@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Практика с Активити
 class PracticeActivityViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var fieldWithPicker: UITextField!
@@ -36,7 +36,7 @@ class PracticeActivityViewController: UIViewController {
         }
     }
 }
-
+// Расширение для протоколов Пикера
 extension PracticeActivityViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

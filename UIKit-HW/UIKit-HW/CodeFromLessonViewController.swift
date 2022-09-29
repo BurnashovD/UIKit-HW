@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Повтор кода из урока
 class CodeFromLessonViewController: UIViewController {
 
     var buttonShare = UIButton()
