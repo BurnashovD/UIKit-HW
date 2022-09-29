@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// Класс выставление счета
 class BillViewController: UIViewController {
 
     @IBOutlet weak var payButton: UIButton!

@@ -9,30 +9,44 @@ import UIKit
 // Класс регистрации гостя
 class RegistrationViewController: UIViewController {
 
-    let bookSwitcher = UISwitch()
-    let questionLabel = UILabel()
-    let payLabel = UILabel()
-    let paySwitcher = UISwitch()
-    let billButton = UIButton()
+    let bookSwitcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.frame = CGRect(x: 307, y: 580, width: 0, height: 0)
+        return switcher
+    }()
+    let questionLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 49, y: 580, width: 150, height: 30)
+        label.font = UIFont(name: "Ermilov", size: 18.0)
+        label.text = "Есть ли бронь?"
+        return label
+    }()
+    let payLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 49, y: 630, width: 150, height: 30)
+        label.font = UIFont(name: "Ermilov", size: 18.0)
+        label.text = "Предоплата"
+        return label
+    }()
+    let paySwitcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.frame = CGRect(x: 307, y: 630, width: 0, height: 0)
+        return switcher
+    }()
     let thirdVC = BillViewController()
     @IBOutlet weak var guestLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        bookSwitcher.frame = CGRect(x: 307, y: 580, width: 0, height: 0)
+        configUI()
+    }
+    private func configUI() {
         view.addSubview(bookSwitcher)
-        questionLabel.frame = CGRect(x: 49, y: 580, width: 150, height: 30)
-        questionLabel.font = UIFont(name: "Ermilov", size: 18.0)
-        questionLabel.text = "Есть ли бронь?"
         view.addSubview(questionLabel)
-        payLabel.frame = CGRect(x: 49, y: 630, width: 150, height: 30)
-        payLabel.font = UIFont(name: "Ermilov", size: 18.0)
-        payLabel.text = "Предоплата"
         view.addSubview(payLabel)
-        paySwitcher.frame = CGRect(x: 307, y: 630, width: 0, height: 0)
         view.addSubview(paySwitcher)
     }
+    
     @IBAction func guestCounter(_ sender: UIStepper) {
         guestLabel.text = String(sender.value)
     }
@@ -40,6 +54,7 @@ class RegistrationViewController: UIViewController {
     @IBAction func bringBillButton(_ sender: Any) {
         self.configureGoToNextAlertController()
     }
+    
     func configureGoToNextAlertController() {
         let goNextAlertController = UIAlertController(title: "Выставить счет?", message: nil, preferredStyle: .alert)
         let goBackAlertAction = UIAlertAction(title: "Назад", style: .default)
@@ -50,5 +65,4 @@ class RegistrationViewController: UIViewController {
         goNextAlertController.addAction(goNextAlertAction)
         present(goNextAlertController, animated: true, completion: nil)
     }
-
 }

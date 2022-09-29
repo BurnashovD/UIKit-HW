@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// Rласс меню входа
+// Класс меню входа
 class SingInViewController: UIViewController {
     @IBOutlet weak var singInButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
@@ -15,9 +15,12 @@ class SingInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         secretText()
-        singInButton.layer.cornerRadius = 25
+        cornerRadiusButton()
     }
     func secretText() {
         passwordText.isSecureTextEntry = true
+    }
+    func cornerRadiusButton() {
+        singInButton.layer.cornerRadius = 25
     }
 }
