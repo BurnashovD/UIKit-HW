@@ -24,7 +24,7 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         emailLabel.textColor = .orange
         return emailLabel
     }()
-    
+
     lazy var createPasswordLabel: UILabel = {
         let passwordLabel = UILabel()
         passwordLabel.frame = CGRect(x: 40, y: 450, width: 100, height: 30)
@@ -32,13 +32,14 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         passwordLabel.textColor = .orange
         return passwordLabel
     }()
-    // Email TextField
+    // Phone TextField
     lazy var createPhoneNumberTextField: UITextField = {
        let textField = UITextField()
         textField.frame = CGRect(x: 40, y: 385, width: 300, height: 40)
         textField.autocorrectionType = .no
         textField.resignFirstResponder()
         textField.placeholder = "Введите номер телефона"
+        textField.keyboardType = .asciiCapableNumberPad
         return textField
     }()
     // Password TextField
@@ -51,7 +52,7 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         textField.placeholder = "Введите пароль"
         return textField
     }()
-    
+    // Создает кнопку войти
     lazy var createEntryButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
@@ -59,7 +60,7 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         button.setTitle("Войти", for: .normal)
         button.layer.cornerRadius = 10
         button.backgroundColor = .orange
-        button.addTarget(self, action: #selector(segueToMenuVC(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(segueToMenuVC), for: .touchUpInside)
         return button
     }()
 
@@ -67,7 +68,6 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         cofigureUI()
         createPhoneNumberTextField.delegate = self
-        
     }
     private func cofigureUI() {
         view.addSubview(createPizzaLogoImageView)
@@ -77,17 +77,18 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(createPasswordtextField)
         view.addSubview(createEntryButton)
     }
-    @objc func segueToMenuVC(sender: Any) {
-        print("Button")
+    // Переход к меню
+    @objc func segueToMenuVC() {
         let menuVC = MenuViewController()
         navigationController?.pushViewController(menuVC, animated: true)
     }
 }
-
+// Расширения для ввода цифр
 extension SingInViewController {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         if textField == createPhoneNumberTextField {
-            let allowedCharacters = CharacterSet(charactersIn:"+0123456789 ")
+            let allowedCharacters = CharacterSet(charactersIn: "+0123456789 ")
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
         }
