@@ -16,28 +16,36 @@ class SecondSongViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        durationSlider.thumbTintColor = .purple
-        // MARK: - Add duration slider
-        var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self,
-                                     selector: #selector(sliderDuration), userInfo: nil, repeats: true)
-        // MARK: - ActivityController
+        addSong()
+        shedulTimer()
+        durationSliderColor()
         shareButton.addTarget(self, action: #selector(openShareMenu), for: .allEvents)
+    }
         // MARK: - Add mp3
+    private func addSong() {
         do {
             if let audioPath = Bundle.main.path(forResource: "prihodite", ofType: "mp3") {
             try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
             }
         } catch {
-            print("Error")
+            return
         }
     }
+    
+    private func durationSliderColor() {
+        durationSlider.thumbTintColor = .purple
+    }
+    
+    private func shedulTimer() {
+        var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self,
+                                     selector: #selector(sliderDuration), userInfo: nil, repeats: true)
+    }
     // MARK: - Segue to library
-    @IBAction func backToLibraryButton(_ sender: Any) {
+    @IBAction func backToLibraryButtonAction(_ sender: Any) {
         player.stop()
         dismiss(animated: true, completion: nil)
     }
-    // MARK: - Play and Pause Button
-    @IBAction func playPauseButton(_ sender: Any) {
+    @IBAction func playPauseButtonAction(_ sender: Any) {
         if player.isPlaying {
             player.pause()
         } else {
@@ -49,6 +57,7 @@ class SecondSongViewController: UIViewController {
         player.currentTime = TimeInterval(durationSlider.value)
         player.play()
     }
+    
     @objc func sliderDuration() {
         durationSlider.value = Float(player.currentTime)
     }
