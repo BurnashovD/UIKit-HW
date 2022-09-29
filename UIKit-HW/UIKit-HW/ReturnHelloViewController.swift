@@ -13,6 +13,7 @@ import UIKit
  контролеру а контролер отдаст это лейблу и отобразит
  это на экране*/
 
+// Класс преобразует набор букв в слово
 class ReturnHelloViewController: UIViewController {
 
     @IBOutlet weak var helloLabel: UILabel!
