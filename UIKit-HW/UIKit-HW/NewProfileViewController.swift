@@ -10,115 +10,163 @@ import UIKit
 class NewProfileViewController: UIViewController {
     
     let picker = UIPickerView()
-    let nameLabel = UILabel()
-    let textForName = UITextField()
-    let lineUnderNameText = UIView()
-    let dateLabel = UILabel()
-    let ageLabel = UILabel()
-    let sexLabel = UILabel()
-    let instagramLabel = UILabel()
-    let dateTextField = UITextField()
-    let lineUnderDateText = UIView()
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 50, y: 305, width: 100, height: 20)
+        label.text = "Имя"
+        label.font = UIFont(name: "DIN Alternate", size: 17)
+        return label
+    }()
+    lazy var textForName: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 50, y: 330, width: 320, height: 35)
+        field.autocorrectionType = .no
+        field.placeholder = "Укажите имя"
+        return field
+    }()
+    let lineUnderNameText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 50, y: 365, width: 320, height: 1)
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 50, y: 400, width: 100, height: 20)
+        label.text = "Дата"
+        label.font = UIFont(name: "DIN Alternate", size: 17)
+        return label
+    }()
+    let ageLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 50, y: 500, width: 100, height: 20)
+        label.text = "Возраст"
+        label.font = UIFont(name: "DIN Alternate", size: 17)
+        return label
+    }()
+    let sexLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 50, y: 600, width: 100, height: 20)
+        label.text = "Пол"
+        label.font = UIFont(name: "DIN Alternate", size: 17)
+        return label
+    }()
+    let instagramLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 50, y: 700, width: 100, height: 20)
+        label.text = "Instagram"
+        label.font = UIFont(name: "DIN Alternate", size: 17)
+        return label
+    }()
+    let dateTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 50, y: 430, width: 320, height: 35)
+        field.autocorrectionType = .no
+        field.placeholder = "Укажите дату рождения"
+        return field
+    }()
+    let lineUnderDateText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 50, y: 465, width: 320, height: 1)
+        view.backgroundColor = .lightGray
+        return view
+    }()
     let datePicker = UIDatePicker()
-    let ageTextField = UITextField()
-    let lineUnderAgeText = UIView()
+    let ageTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 50, y: 530, width: 320, height: 35)
+        field.autocorrectionType = .no
+        field.placeholder = "Укажите возраст"
+        return field
+    }()
+    let lineUnderAgeText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 50, y: 565, width: 320, height: 1)
+        view.backgroundColor = .lightGray
+        return view
+    }()
     let agesArray: [Int] = Array(7...100)
     let agesPickerView = UIPickerView()
-    let sexTextField = UITextField()
-    let lineUnderSexText = UIView()
+    let sexTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 50, y: 630, width: 320, height: 35)
+        field.autocorrectionType = .no
+        field.placeholder = "Укажите пол"
+        return field
+    }()
+    let lineUnderSexText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 50, y: 665, width: 320, height: 1)
+        view.backgroundColor = .lightGray
+        return view
+    }()
     let sexPickerView = UIPickerView()
     let sexArray = ["Man", "Women", "Pet"]
-    let instagramTextField = UITextField()
-    let lineUnderInstagramText = UIView()
-    let addNewProfileButton = UIButton()
-    let chooseProfileNumberLabel = UILabel()
-    let chooseProfileNumberText = UITextField()
+    let instagramTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 50, y: 730, width: 320, height: 35)
+        field.autocorrectionType = .no
+        field.placeholder = "Укажите профиль пользователя"
+        field.addTarget(self, action: #selector(addInstagramAlert), for: .allEvents)
+        return field
+    }()
+    let lineUnderInstagramText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 50, y: 765, width: 320, height: 1)
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    let addNewProfileButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 315, y: 18, width: 90, height: 30)
+        button.setTitle("Добавить", for: .normal)
+        button.setTitleColor(.link, for: .normal)
+        button.addTarget(self, action: #selector(addNewProfileAndReturnToMainVC), for: .allEvents)
+        return button
+    }()
+    let chooseProfileNumberLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 170, y: 240, width: 300, height: 30)
+        label.text = "Номер профиля:"
+        label.font = UIFont(name: "DIN Alternate", size: 17)
+        return label
+    }()
+    let chooseProfileNumberText: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 300, y: 240, width: 20, height: 30)
+        field.placeholder = "0"
+        return field
+    }()
     let steper = UIStepper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createDatePicker()
         agesPickerView.delegate = self
         agesPickerView.dataSource = self
-        ageTextField.inputView = agesPickerView
         sexPickerView.delegate = self
         sexPickerView.dataSource = self
+        
+        ageTextField.inputView = agesPickerView
         sexTextField.inputView = sexPickerView
-        // MARK: - Label and TextField for name
-        nameLabel.frame = CGRect(x: 50, y: 305, width: 100, height: 20)
-        nameLabel.text = "Имя"
-        nameLabel.font = UIFont(name: "DIN Alternate", size: 17)
+    }
+    func configUI() {
         view.addSubview(nameLabel)
-        textForName.frame = CGRect(x: 50, y: 330, width: 320, height: 35)
-        textForName.autocorrectionType = .no
-        textForName.placeholder = "Укажите имя"
-        lineUnderNameText.frame = CGRect(x: 50, y: 365, width: 320, height: 1)
-        lineUnderNameText.backgroundColor = .lightGray
         view.addSubview(textForName)
         view.addSubview(lineUnderNameText)
-        // MARK: - Label and UIDatePicker for date
-        dateLabel.frame = CGRect(x: 50, y: 400, width: 100, height: 20)
-        dateLabel.text = "Дата"
-        dateLabel.font = UIFont(name: "DIN Alternate", size: 17)
         view.addSubview(dateLabel)
-        dateTextField.frame = CGRect(x: 50, y: 430, width: 320, height: 35)
-        dateTextField.autocorrectionType = .no
-        dateTextField.placeholder = "Укажите дату рождения"
-        lineUnderDateText.frame = CGRect(x: 50, y: 465, width: 320, height: 1)
-        lineUnderDateText.backgroundColor = .lightGray
         view.addSubview(dateTextField)
         view.addSubview(lineUnderDateText)
-        createDatePicker()
-        // MARK: - Label for age
-        ageLabel.frame = CGRect(x: 50, y: 500, width: 100, height: 20)
-        ageLabel.text = "Возраст"
-        ageLabel.font = UIFont(name: "DIN Alternate", size: 17)
         view.addSubview(ageLabel)
-        ageTextField.frame = CGRect(x: 50, y: 530, width: 320, height: 35)
-        ageTextField.autocorrectionType = .no
-        ageTextField.placeholder = "Укажите возраст"
-        lineUnderAgeText.frame = CGRect(x: 50, y: 565, width: 320, height: 1)
-        lineUnderAgeText.backgroundColor = .lightGray
         view.addSubview(ageTextField)
         view.addSubview(lineUnderAgeText)
-        // MARK: - Label for sex
-        sexLabel.frame = CGRect(x: 50, y: 600, width: 100, height: 20)
-        sexLabel.text = "Пол"
-        sexLabel.font = UIFont(name: "DIN Alternate", size: 17)
         view.addSubview(sexLabel)
-        sexTextField.frame = CGRect(x: 50, y: 630, width: 320, height: 35)
-        sexTextField.autocorrectionType = .no
-        sexTextField.placeholder = "Укажите пол"
-        lineUnderSexText.frame = CGRect(x: 50, y: 665, width: 320, height: 1)
-        lineUnderSexText.backgroundColor = .lightGray
         view.addSubview(sexTextField)
         view.addSubview(lineUnderSexText)
-        // MARK: - Label for Instagram
-        instagramLabel.frame = CGRect(x: 50, y: 700, width: 100, height: 20)
-        instagramLabel.text = "Instagram"
-        instagramLabel.font = UIFont(name: "DIN Alternate", size: 17)
         view.addSubview(instagramLabel)
-        instagramTextField.frame = CGRect(x: 50, y: 730, width: 320, height: 35)
-        instagramTextField.autocorrectionType = .no
-        instagramTextField.placeholder = "Укажите профиль пользователя"
-        lineUnderInstagramText.frame = CGRect(x: 50, y: 765, width: 320, height: 1)
-        lineUnderInstagramText.backgroundColor = .lightGray
-        instagramTextField.addTarget(self, action: #selector(addInstagramAlert), for: .allEvents)
         view.addSubview(instagramTextField)
         view.addSubview(lineUnderInstagramText)
-        // MARK: - Add button
-        addNewProfileButton.frame = CGRect(x: 315, y: 18, width: 90, height: 30)
-        addNewProfileButton.setTitle("Добавить", for: .normal)
-        addNewProfileButton.setTitleColor(.link, for: .normal)
-        addNewProfileButton.addTarget(self, action: #selector(addNewProfileAndReturnToMainVC), for: .allEvents)
         view.addSubview(addNewProfileButton)
-        // MARK: - Choose number of adding profile
-        chooseProfileNumberLabel.frame = CGRect(x: 170, y: 240, width: 300, height: 30)
-        chooseProfileNumberLabel.text = "Номер профиля:"
-        chooseProfileNumberLabel.font = UIFont(name: "DIN Alternate", size: 17)
-        chooseProfileNumberText.frame = CGRect(x: 300, y: 240, width: 20, height: 30)
-        chooseProfileNumberText.placeholder = "0"
-
         view.addSubview(chooseProfileNumberText)
         view.addSubview(chooseProfileNumberLabel)
     }
