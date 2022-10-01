@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+// Будильник
+final class AlarmViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
