@@ -7,39 +7,50 @@
 
 import UIKit
 // Класс отвечает за страницу с кросовками найк
-class NikeShoesMenuViewController: UIViewController {
-    let nikeLogoImageView = UIImageView()
-    let differentNikeColors = ["Black", "White", "Green"]
-    var colorsSegmentControl = UISegmentedControl()
-    let nikeImagesView = UIImageView()
-    let nikeShoesImagesArray = [UIImage(named: "blackNikeee.png"),
-                                UIImage(named: "whiteNikeShoes.jpeg"),
-                                UIImage(named: "greenNike.jpeg")]
-    let nameOfShoesLabel = UILabel()
-    let modelOfShoesLabel = UILabel()
-    let aboutNikeLabel = UILabel()
-    let shoesSizeTextField = UITextField()
-    let sizesArray = Array(38...44)
-    let sizesPickerView = UIPickerView()
-    let addToCartButton = UIButton()
-    let spiderManImageView = UIButton()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // MARK: - Label with brand name
-        nameOfShoesLabel.frame = CGRect(x: 17, y: 500, width: 150, height: 50)
-        nameOfShoesLabel.text = "Nike"
-        nameOfShoesLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 60)
-        nameOfShoesLabel.textColor = .white
-        // MARK: - Label with model
-        modelOfShoesLabel.frame = CGRect(x: 66, y: 550, width: 150, height: 20)
-        modelOfShoesLabel.text = "Air zoom"
-        modelOfShoesLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
-        modelOfShoesLabel.textColor = .gray
-        // MARK: - Description about shoes TextField
-        aboutNikeLabel.lineBreakMode = .byWordWrapping
-        aboutNikeLabel.numberOfLines = 0
-        aboutNikeLabel.text = """
+final class NikeShoesMenuViewController: UIViewController {
+    // MARK: - Visual components
+    lazy var nikeLogoImageView: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "nikeLogo")
+        image.frame = CGRect(x: 300, y: 160, width: 80, height: 50)
+        return image
+    }()
+    lazy var colorsSegmentControl: UISegmentedControl = {
+        let segment = UISegmentedControl(items: differentNikeColors)
+        segment.frame = CGRect(x: 0, y: 0, width: 380, height: 35)
+        segment.center = CGPoint(x: 195, y: 475)
+        segment.backgroundColor = .darkGray
+        segment.addTarget(self, action: #selector(changeColorOfShoesAction), for: .valueChanged)
+        return segment
+    }()
+    lazy var nikeImagesView: UIImageView = {
+        let image = UIImageView()
+        image.image = nikeShoesImagesArray[0]
+        image.frame = CGRect(x: 0, y: 0, width: 400, height: 300)
+        image.center = CGPoint(x: 195, y: 300)
+        return image
+    }()
+    lazy var nameOfShoesLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 17, y: 500, width: 150, height: 50)
+        label.text = "Nike"
+        label.font = UIFont(name: "Arial Rounded MT Bold", size: 60)
+        label.textColor = .white
+        return label
+    }()
+    lazy var modelOfShoesLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 20, y: 550, width: 180, height: 20)
+        label.text = "Air Zoom"
+        label.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
+        label.textColor = .gray
+        return label
+    }()
+    lazy var aboutNikeLabel: UILabel = {
+        let label = UILabel()
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.text = """
 Кроссовки Nike Air Zoom SuperRep разработаны для поддержки и амортизации во время интервальных тренировок высокой интенсивности.
 
        Конструкция верха поддерживает стопу во время
@@ -51,57 +62,68 @@ class NikeShoesMenuViewController: UIViewController {
        
        Материал верха хорошо пропускает воздух.
 """
-        aboutNikeLabel.frame = CGRect(x: 18, y: 465, width: 370, height: 400)
-        aboutNikeLabel.font = UIFont(name: "Arial", size: 13)
-        aboutNikeLabel.textColor = .lightGray
-        // MARK: - Default Black Vans image
-        nikeImagesView.image = nikeShoesImagesArray[0]
-        nikeImagesView.frame = CGRect(x: 0, y: 0, width: 400, height: 300)
-        nikeImagesView.center = CGPoint(x: 195, y: 300)
+        label.frame = CGRect(x: 18, y: 465, width: 370, height: 400)
+        label.font = UIFont(name: "Arial", size: 13)
+        label.textColor = .lightGray
+        return label
+    }()
+    lazy var shoesSizeTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 25, y: 770, width: 250, height: 50)
+        field.backgroundColor = .black
+        field.textColor = .white
+        field.autocorrectionType = .no
+        field.layer.cornerRadius = 8
+        field.textAlignment = .center
+        field.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
+        field.placeholder = "Выберите размер"
+        return field
+    }()
+    lazy var addToCartButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 290, y: 770, width: 80, height: 50)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 8
+        button.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
+        button.addTarget(self, action: #selector(addToCartAlerAction), for: .touchUpInside)
+        return button
+    }()
+    lazy var spiderManButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "spiderMan"), for: .normal)
+        button.frame = CGRect(x: 270, y: 10, width: 100, height: 100)
+        button.addTarget(self, action: #selector(callActivityView), for: .touchUpInside)
+        return button
+    }()
+    // MARK: - Public propertys
+    let differentNikeColors = ["Black", "White", "Green"]
+    let nikeShoesImagesArray = [UIImage(named: "blackNikeee.png"),
+                                UIImage(named: "whiteNikeShoes.jpeg"),
+                                UIImage(named: "greenNike.jpeg")]
+    let sizesArray = Array(38...44)
+    let sizesPickerView = UIPickerView()
+    // MARK: - viewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configUI()
+    }
+    // MARK: - Public methods
+    func configUI() {
         view.addSubview(nikeImagesView)
-        // MARK: - Colors of shoes SegmentControl
-        colorsSegmentControl = UISegmentedControl(items: differentNikeColors)
-        colorsSegmentControl.frame = CGRect(x: 0, y: 0, width: 380, height: 35)
-        colorsSegmentControl.center = CGPoint(x: 195, y: 475)
-        colorsSegmentControl.backgroundColor = .darkGray
-        colorsSegmentControl.addTarget(self, action: #selector(changeColorOfShoes), for: .valueChanged)
         view.addSubview(colorsSegmentControl)
-        // MARK: - Nike Logo
-        nikeLogoImageView.image = UIImage(named: "nikeLogo")
-        nikeLogoImageView.frame = CGRect(x: 300, y: 160, width: 80, height: 50)
         view.addSubview(nikeLogoImageView)
         view.addSubview(nameOfShoesLabel)
         view.addSubview(modelOfShoesLabel)
         view.addSubview(aboutNikeLabel)
-        // MARK: - TextField and PickerView with shoes sizes
-        shoesSizeTextField.frame = CGRect(x: 25, y: 770, width: 250, height: 50)
-        shoesSizeTextField.backgroundColor = .black
-        shoesSizeTextField.textColor = .white
-        shoesSizeTextField.autocorrectionType = .no
-        shoesSizeTextField.layer.cornerRadius = 8
-        shoesSizeTextField.textAlignment = .center
-        shoesSizeTextField.font = UIFont(name: "Arial Rounded MT Bold", size: 20)
-        shoesSizeTextField.placeholder = "Выберите размер"
         view.addSubview(shoesSizeTextField)
-        // MARK: - Input Picker in TextField and sub on protocols
+        view.addSubview(addToCartButton)
+        view.addSubview(spiderManButton)
         shoesSizeTextField.inputView = sizesPickerView
         sizesPickerView.dataSource = self
         sizesPickerView.delegate = self
-        // MARK: - Add to cart button
-        addToCartButton.frame = CGRect(x: 290, y: 770, width: 80, height: 50)
-        addToCartButton.backgroundColor = .black
-        addToCartButton.layer.cornerRadius = 8
-        addToCartButton.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
-        addToCartButton.addTarget(self, action: #selector(addToCartAler), for: .touchUpInside)
-        view.addSubview(addToCartButton)
-        // MARK: - SpiderMan image
-        spiderManImageView.setImage(UIImage(named: "spiderMan"), for: .normal)
-        spiderManImageView.frame = CGRect(x: 270, y: 10, width: 100, height: 100)
-        spiderManImageView.addTarget(self, action: #selector(callActivityview), for: .touchUpInside)
-        view.addSubview(spiderManImageView)
     }
-    // MARK: - SegmentControl change color of shoes
-    @objc func changeColorOfShoes(target: UISegmentedControl) {
+    // SegmentControl change color of shoes
+    @objc func changeColorOfShoesAction(target: UISegmentedControl) {
         if target == colorsSegmentControl {
             let segmentIndex = target.selectedSegmentIndex
             nikeImagesView.image = nikeShoesImagesArray[segmentIndex]
@@ -109,8 +131,8 @@ class NikeShoesMenuViewController: UIViewController {
             print(whatPersonCheck ?? "")
         }
     }
-    // MARK: - Alert add to cart or alert choose size
-    @objc func addToCartAler() {
+    // Alert add to cart or alert choose size
+    @objc func addToCartAlerAction() {
         if shoesSizeTextField.text != "" {
         let alertController = UIAlertController(title: "Добавить в корзину?", message: nil, preferredStyle: .alert)
         let yesAlertAction = UIAlertAction(title: "Да", style: .default)
@@ -118,15 +140,15 @@ class NikeShoesMenuViewController: UIViewController {
         alertController.addAction(yesAlertAction)
         alertController.addAction(cancelAlertAction)
         present(alertController, animated: true, completion: nil)
-        } else if shoesSizeTextField.text == "" {
-            let emptyFieldAlertController = UIAlertController(title: "Сначала выберите размер", message: nil, preferredStyle: .alert)
-            let emptyFieldAlertAction = UIAlertAction(title: "Ok", style: .cancel)
-            emptyFieldAlertController.addAction(emptyFieldAlertAction)
-            present(emptyFieldAlertController, animated: true, completion: nil)
+    } else if shoesSizeTextField.text == "" {
+        let emptyFieldAlertController = UIAlertController(title: "Сначала выберите размер", message: nil, preferredStyle: .alert)
+        let emptyFieldAlertAction = UIAlertAction(title: "Ok", style: .cancel)
+        emptyFieldAlertController.addAction(emptyFieldAlertAction)
+        present(emptyFieldAlertController, animated: true, completion: nil)
         }
     }
-    // MARK: - Open ActivityViewController when touch a spider
-    @objc func callActivityview() {
+    // Call activity view when touch spider
+    @objc func callActivityView() {
         let facebookURL = NSURL(string: "https://ru-ru.facebook.com/")
         let activityViewController = UIActivityViewController(activityItems: ["\(nameOfShoesLabel.text ?? "nil") \(modelOfShoesLabel.text ?? "nil") - Spider Shoes", facebookURL ?? "nil"], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
@@ -148,7 +170,5 @@ extension NikeShoesMenuViewController: UIPickerViewDelegate, UIPickerViewDataSou
         return String(sizesArray[row])
     }
 }
-    
-
 
 

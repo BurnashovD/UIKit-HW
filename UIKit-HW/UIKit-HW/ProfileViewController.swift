@@ -7,123 +7,162 @@
 
 import UIKit
 // Класс отвечает за профиль пользователя
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    let profilePhotoImageView = UIImageView()
-    let changeProfilePhotoButton = UIButton()
-    let backToMainMenuButton = UIButton()
-    let nameLabel = UILabel()
-    let nameTextField = UITextField()
-    let lineUnderNameText = UIView()
-    let dateLabel = UILabel()
-    let dateTextField = UITextField()
-    let lineUnderDateText = UIView()
-    let datePicker = UIDatePicker()
-    let emailLabel = UILabel()
-    let emailTextField = UITextField()
-    let lineUnderEmailText = UIView()
-    let notifyLabel = UILabel()
-    let notifySwitcher = UISwitch()
+final class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // MARK: - Visual components
+    lazy var profilePhotoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.frame = CGRect(x: 140, y: 80, width: 130, height: 130)
+        imageView.backgroundColor = .white
+        imageView.layer.cornerRadius = 50
+        return imageView
+    }()
+    lazy var changeProfilePhotoButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 75, y: 230, width: 250, height: 20)
+        button.setTitle("Изменить фото профиля", for: .normal)
+        button.addTarget(self, action: #selector(selectProfilePhoto), for: .touchUpInside)
+        return button
+    }()
+    lazy var backToMainMenuButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 15, y: 10, width: 50, height: 50)
+        button.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        button.addTarget(self, action: #selector(backToMainMenuAction), for: .touchUpInside)
+        return button
+    }()
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 183, y: 260, width: 100, height: 100)
+        label.text = "Name"
+        label.font = UIFont(name: "Arial Rounded MT Bold", size: 17)
+        label.textColor = .white
+        return label
+    }()
+    lazy var nameTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
+        field.center = CGPoint(x: 200, y: 350)
+        field.autocorrectionType = .no
+        field.placeholder = "Введите имя"
+        field.textAlignment = .center
+        field.textColor = .white
+        field.font = UIFont(name: "American Typewriter", size: 20)
+        return field
+    }()
+    lazy var lineUnderNameText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: 300, height: 1)
+        view.center = CGPoint(x: 200, y: 360)
+        view.backgroundColor = .white
+        return view
+    }()
+    lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 175, y: 365, width: 300, height: 50)
+        label.text = "Birthday"
+        label.textColor = .white
+        label.font = UIFont(name: "Arial Rounded MT Bold", size: 17)
+        return label
+    }()
+    lazy var dateTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
+        field.center = CGPoint(x: 200, y: 430)
+        field.autocorrectionType = .no
+        field.placeholder = "Выберите дату"
+        field.textAlignment = .center
+        field.textColor = .white
+        field.font = UIFont(name: "American Typewriter", size: 20)
+        return field
+    }()
+    lazy var lineUnderDateText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: 300, height: 1)
+        view.center = CGPoint(x: 200, y: 440)
+        view.backgroundColor = .white
+        return view
+    }()
+    lazy var emailLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 185, y: 445, width: 300, height: 50)
+        label.text = "Email"
+        label.font = UIFont(name: "Arial Rounded MT Bold", size: 17)
+        label.textColor = .white
+        return label
+    }()
+    lazy var emailTextField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
+        field.center = CGPoint(x: 200, y: 510)
+        field.placeholder = "Укажите почту"
+        field.textAlignment = .center
+        field.textColor = .white
+        field.font = UIFont(name: "American Typewriter", size: 20)
+        return field
+    }()
+    lazy var lineUnderEmailText: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: 300, height: 1)
+        view.backgroundColor = .white
+        view.center = CGPoint(x: 200, y: 520)
+        return view
+    }()
+    lazy var notifyLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 120, y: 600, width: 300, height: 30)
+        label.text = "Включить уведомления"
+        label.font = UIFont(name: "Arial Rounded MT Bold", size: 15)
+        label.textColor = .white
+        return label
+    }()
+    lazy var notifySwitcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.frame = CGRect(x: 310, y: 600, width: 60, height: 60)
+        switcher.addTarget(self, action: #selector(afterSwitcherIsOnAlert), for: .valueChanged)
+        return switcher
+    }()
     
+    let datePicker = UIDatePicker()
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        createDatePicker()
-        // MARK: - Add ImageView for profile photo
-        profilePhotoImageView.frame = CGRect(x: 140, y: 80, width: 130, height: 130)
-        profilePhotoImageView.backgroundColor = .white
-        profilePhotoImageView.layer.cornerRadius = 50
+        configUI()
+    }
+    // MARK: - Public methods
+    func configUI() {
         view.addSubview(profilePhotoImageView)
-        // MARK: - Button to change PP
-        changeProfilePhotoButton.frame = CGRect(x: 75, y: 230, width: 250, height: 20)
-        changeProfilePhotoButton.setTitle("Изменить фото профиля", for: .normal)
-        changeProfilePhotoButton.addTarget(self, action: #selector(selectProfilePhoto), for: .touchUpInside)
         view.addSubview(changeProfilePhotoButton)
-        // MARK: - Add button back to menu
-        backToMainMenuButton.frame = CGRect(x: 15, y: 10, width: 50, height: 50)
-        backToMainMenuButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
-        backToMainMenuButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
         view.addSubview(backToMainMenuButton)
-        // MARK: - Name Label
-        nameLabel.frame = CGRect(x: 183, y: 260, width: 100, height: 100)
-        nameLabel.text = "Name"
-        nameLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 17)
-        nameLabel.textColor = .white
         view.addSubview(nameLabel)
-        // MARK: - Add TextField for name and line under
-        nameTextField.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
-        nameTextField.center = CGPoint(x: 200, y: 350)
-        nameTextField.autocorrectionType = .no
-        nameTextField.placeholder = "Введите имя"
-        nameTextField.textAlignment = .center
-        nameTextField.textColor = .white
-        nameTextField.font = UIFont(name: "American Typewriter", size: 20)
-        lineUnderNameText.frame = CGRect(x: 0, y: 0, width: 300, height: 1)
-        lineUnderNameText.center = CGPoint(x: 200, y: 360)
-        lineUnderNameText.backgroundColor = .white
         view.addSubview(nameTextField)
         view.addSubview(lineUnderNameText)
-        //MARK: - Add Label and TextField for date
-        dateLabel.frame = CGRect(x: 175, y: 365, width: 300, height: 50)
-        dateLabel.text = "Birthday"
-        dateLabel.textColor = .white
-        dateLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 17)
-        dateTextField.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
-        dateTextField.center = CGPoint(x: 200, y: 430)
-        dateTextField.autocorrectionType = .no
-        dateTextField.placeholder = "Выберите дату"
-        dateTextField.textAlignment = .center
-        dateTextField.textColor = .white
-        dateTextField.font = UIFont(name: "American Typewriter", size: 20)
-        lineUnderDateText.frame = CGRect(x: 0, y: 0, width: 300, height: 1)
-        lineUnderDateText.center = CGPoint(x: 200, y: 440)
-        lineUnderDateText.backgroundColor = .white
         view.addSubview(dateLabel)
         view.addSubview(dateTextField)
         view.addSubview(lineUnderDateText)
-        // MARK: - Add Label and TextField for Email
-        emailLabel.frame = CGRect(x: 185, y: 445, width: 300, height: 50)
-        emailLabel.text = "Email"
-        emailLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 17)
-        emailLabel.textColor = .white
         view.addSubview(emailLabel)
-        emailTextField.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
-        emailTextField.center = CGPoint(x: 200, y: 510)
-        emailTextField.placeholder = "Укажите почту"
-        emailTextField.textAlignment = .center
-        emailTextField.textColor = .white
-        emailTextField.font = UIFont(name: "American Typewriter", size: 20)
-        lineUnderEmailText.frame = CGRect(x: 0, y: 0, width: 300, height: 1)
-        lineUnderEmailText.backgroundColor = .white
-        lineUnderEmailText.center = CGPoint(x: 200, y: 520)
         view.addSubview(lineUnderEmailText)
         view.addSubview(emailTextField)
-        //MARK: - Adding delivery Label to Switch
-        notifyLabel.frame = CGRect(x: 120, y: 600, width: 300, height: 30)
-        notifyLabel.text = "Включить уведомления"
-        notifyLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 15)
-        notifyLabel.textColor = .white
         view.addSubview(notifyLabel)
-        // MARK: - Add notify Switch
-        notifySwitcher.frame = CGRect(x: 310, y: 600, width: 60, height: 60)
-        notifySwitcher.addTarget(self, action: #selector(alertAfterSwitcherIsOn), for: .valueChanged)
         view.addSubview(notifySwitcher)
+        createDatePicker()
     }
-    // MARK: - Methods to change PP
+    // Methods to change PP
     @objc func selectProfilePhoto() {
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self
         myPickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
         self.present(myPickerController, animated: true, completion: nil)
     }
-    // MARK: - Method add Picker for profile image
+    // Method add Picker for profile image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         profilePhotoImageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
-    // MARK: - Dismiss Button
-    @objc func backToMainMenu() {
+    // Dismiss Button
+    @objc func backToMainMenuAction() {
         dismiss(animated: true, completion: nil)
     }
-    // MARK: - Create ToolBar for DatePicker
+    // Create ToolBar for DatePicker
     func createToolBar() -> UIToolbar {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -131,7 +170,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         toolBar.setItems([doneButton], animated: true)
         return toolBar
     }
-    // MARK: - Create Date Picker
+    // Create Date Picker
     func createDatePicker() {
         dateTextField.textAlignment = .center
         datePicker.preferredDatePickerStyle = .wheels
@@ -139,7 +178,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         dateTextField.inputView = datePicker
         dateTextField.inputAccessoryView = createToolBar()
     }
-    // MARK: - Create Done Button for ToolBar and correct text style
+    // Create Done Button for ToolBar and correct text style
     @objc func donePressed() {
         let dateFormat = DateFormatter()
         dateFormat.dateStyle = .medium
@@ -148,8 +187,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.dateTextField.text = "\(datePicker.date)"
         self.view.endEditing(true)
     }
-    // MARK: - Add alert to switch
-    @objc func alertAfterSwitcherIsOn() {
+    // Add alert to switch
+    @objc func afterSwitcherIsOnAlert() {
         let switchAlertController = UIAlertController(title: "Спасибо!", message: nil, preferredStyle: .alert)
         let switchAlertAction = UIAlertAction(title: "Ок", style: .default)
         switchAlertController.addAction(switchAlertAction)
