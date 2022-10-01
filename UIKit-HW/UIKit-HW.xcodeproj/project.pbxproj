@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5A6AE7828E8ADA0006636D6 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6AE7728E8ADA0006636D6 /* TimerViewController.swift */; };
+		A5A6AE7A28E8C357006636D6 /* RealizeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6AE7928E8C357006636D6 /* RealizeTimerViewController.swift */; };
+		A5A6AE7D28E8DEF3006636D6 /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A6AE7B28E8DEF3006636D6 /* Alarm.storyboard */; };
+		A5A6AE8028E8DF3E006636D6 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A6AE7E28E8DF3E006636D6 /* Timer.storyboard */; };
+		A5A6AE8228E8DF57006636D6 /* WorldTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A6AE8128E8DF57006636D6 /* WorldTime.storyboard */; };
+		A5A6AE8528E8DF7C006636D6 /* StopTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A6AE8328E8DF7C006636D6 /* StopTime.storyboard */; };
+		A5A6AE8728E8DF93006636D6 /* TimerRealise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A6AE8628E8DF93006636D6 /* TimerRealise.storyboard */; };
 		A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */; };
 		A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */; };
 		A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081128DB9DD4006CBCD8 /* Main.storyboard */; };
@@ -14,7 +21,7 @@
 		A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */; };
 		A5CD082328DB9DD5006CBCD8 /* UIKit_HWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082228DB9DD5006CBCD8 /* UIKit_HWTests.swift */; };
 		A5CD082E28DB9DD5006CBCD8 /* UIKit_HWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */; };
-		A5FC9B0828E39F5200075AC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0728E39F5200075AC9 /* ViewController.swift */; };
+		A5FC9B0828E39F5200075AC9 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0728E39F5200075AC9 /* AlarmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5A6AE7728E8ADA0006636D6 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		A5A6AE7928E8C357006636D6 /* RealizeTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealizeTimerViewController.swift; sourceTree = "<group>"; };
+		A5A6AE7C28E8DEF3006636D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "UIKit-HW/Base.lproj/Alarm.storyboard"; sourceTree = "<group>"; };
+		A5A6AE7F28E8DF3E006636D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "UIKit-HW/Base.lproj/Timer.storyboard"; sourceTree = "<group>"; };
+		A5A6AE8128E8DF57006636D6 /* WorldTime.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WorldTime.storyboard; sourceTree = "<group>"; };
+		A5A6AE8428E8DF7C006636D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "UIKit-HW/Base.lproj/StopTime.storyboard"; sourceTree = "<group>"; };
+		A5A6AE8628E8DF93006636D6 /* TimerRealise.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimerRealise.storyboard; sourceTree = "<group>"; };
 		A5CD080828DB9DD4006CBCD8 /* UIKit-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +62,7 @@
 		A5CD082928DB9DD5006CBCD8 /* UIKit-HWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-HWUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_HWUITests.swift; sourceTree = "<group>"; };
 		A5CD082F28DB9DD5006CBCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5FC9B0728E39F5200075AC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5FC9B0728E39F5200075AC9 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 		A5CD07FF28DB9DD4006CBCD8 = {
 			isa = PBXGroup;
 			children = (
+				A5A6AE8328E8DF7C006636D6 /* StopTime.storyboard */,
 				A5CD080A28DB9DD4006CBCD8 /* UIKit-HW */,
 				A5CD082128DB9DD5006CBCD8 /* UIKit-HWTests */,
 				A5CD082C28DB9DD5006CBCD8 /* UIKit-HWUITests */,
@@ -101,8 +116,14 @@
 			children = (
 				A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */,
 				A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */,
-				A5FC9B0728E39F5200075AC9 /* ViewController.swift */,
+				A5FC9B0728E39F5200075AC9 /* AlarmViewController.swift */,
+				A5A6AE7728E8ADA0006636D6 /* TimerViewController.swift */,
+				A5A6AE7928E8C357006636D6 /* RealizeTimerViewController.swift */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
+				A5A6AE7B28E8DEF3006636D6 /* Alarm.storyboard */,
+				A5A6AE7E28E8DF3E006636D6 /* Timer.storyboard */,
+				A5A6AE8128E8DF57006636D6 /* WorldTime.storyboard */,
+				A5A6AE8628E8DF93006636D6 /* TimerRealise.storyboard */,
 				A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */,
 				A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */,
 				A5CD081928DB9DD5006CBCD8 /* Info.plist */,
@@ -232,8 +253,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A6AE8228E8DF57006636D6 /* WorldTime.storyboard in Resources */,
+				A5A6AE8028E8DF3E006636D6 /* Timer.storyboard in Resources */,
+				A5A6AE7D28E8DEF3006636D6 /* Alarm.storyboard in Resources */,
 				A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */,
+				A5A6AE8728E8DF93006636D6 /* TimerRealise.storyboard in Resources */,
 				A5CD081528DB9DD5006CBCD8 /* Assets.xcassets in Resources */,
+				A5A6AE8528E8DF7C006636D6 /* StopTime.storyboard in Resources */,
 				A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A6AE7828E8ADA0006636D6 /* TimerViewController.swift in Sources */,
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
-				A5FC9B0828E39F5200075AC9 /* ViewController.swift in Sources */,
+				A5FC9B0828E39F5200075AC9 /* AlarmViewController.swift in Sources */,
+				A5A6AE7A28E8C357006636D6 /* RealizeTimerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +348,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A5A6AE7B28E8DEF3006636D6 /* Alarm.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5A6AE7C28E8DEF3006636D6 /* Base */,
+			);
+			name = Alarm.storyboard;
+			sourceTree = "<group>";
+		};
+		A5A6AE7E28E8DF3E006636D6 /* Timer.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5A6AE7F28E8DF3E006636D6 /* Base */,
+			);
+			name = Timer.storyboard;
+			sourceTree = "<group>";
+		};
+		A5A6AE8328E8DF7C006636D6 /* StopTime.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5A6AE8428E8DF7C006636D6 /* Base */,
+			);
+			name = StopTime.storyboard;
+			sourceTree = "<group>";
+		};
 		A5CD081128DB9DD4006CBCD8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
