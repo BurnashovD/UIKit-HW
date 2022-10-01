@@ -17,7 +17,6 @@ class CodeFromLessonViewController: UIViewController {
         super.viewDidLoad()
         createTextField()
         createButton()
-        
     }
 // MARK: - Methods
     func createTextField() {
