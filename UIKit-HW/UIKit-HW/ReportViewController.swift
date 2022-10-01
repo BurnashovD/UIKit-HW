@@ -7,9 +7,8 @@
 
 import UIKit
 // Отвечает за отзыв и оценку
-class ReportViewController: UIViewController {
-    let ratingArray = ["1", "2", "3", "4", "5"]
-    let ratingPicker = UIPickerView()
+final class ReportViewController: UIViewController {
+    // MARK: - Visual components
     lazy var reportLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 30, y: 120, width: 200, height: 40)
@@ -42,32 +41,35 @@ class ReportViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = .orange
         button.setTitle("Отправить отзыв", for: .normal)
-        button.addTarget(self, action: #selector(returnToMenu), for: .touchUpInside)
+        button.addTarget(self, action: #selector(returnToMenuAction), for: .touchUpInside)
         return button
     }()
-    
+    // MARK: - Public propertys
+    let ratingArray = ["1", "2", "3", "4", "5"]
+    let ratingPicker = UIPickerView()
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         cofigureUI()
-        pickerTextField.inputView = ratingPicker
-        
-        ratingPicker.delegate = self
-        ratingPicker.dataSource = self
     }
-    private func cofigureUI() {
+    // MARK: Public methods
+    func cofigureUI() {
         view.addSubview(reportLabel)
         view.addSubview(reportTextField)
         view.addSubview(pickerTextField)
         view.addSubview(finishButton)
+        pickerTextField.inputView = ratingPicker
+        ratingPicker.delegate = self
+        ratingPicker.dataSource = self
     }
-    @objc func returnToMenu() {
+    @objc func returnToMenuAction() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let menuVC = storyboard.instantiateViewController(withIdentifier: "Menu") as? MenuViewController else { return }
         menuVC.modalPresentationStyle = .fullScreen
         self.show(menuVC, sender: nil)
     }
 }
-// Расширение для пикера
+/// UIPickerViewDelegate, UIPickerViewDataSource
 extension ReportViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

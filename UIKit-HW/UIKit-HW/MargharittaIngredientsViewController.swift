@@ -6,9 +6,13 @@
 //
 
 import UIKit
+/// protocol
+protocol PopToRootVC: AnyObject {
+    func goToBack()
+}
 // Выбор ингредиентов пиццы
-class MargharittaIngredientsViewController: UIViewController {
-    var pizzaOrder = "Пицца Маргарита с: "
+final class MargharittaIngredientsViewController: UIViewController {
+    // MARK: - Visual components
     // Добавил картинку пиццы
     lazy var addMargharitaImageView: UIImageView = {
         let imageView = UIImageView()
@@ -17,7 +21,6 @@ class MargharittaIngredientsViewController: UIViewController {
         imageView.center = CGPoint(x: 200, y: 200)
         return imageView
     }()
-    // Надпись Маргарита
     lazy var addMargharitaLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 45)
@@ -27,25 +30,21 @@ class MargharittaIngredientsViewController: UIViewController {
         label.font = UIFont(name: "Marker Felt Thin", size: 40)
         return label
     }()
-    // Cheese Switch
     lazy var addCheeseSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 460, width: 100, height: 100)
         return switcher
     }()
-    // Ham Switch
     lazy var addHamSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 520, width: 100, height: 100)
         return switcher
     }()
-    // Mashrooms Switch
     lazy var addMashroomsSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 580, width: 100, height: 100)
         return switcher
     }()
-    // Olive Switch
     lazy var addOliveSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 640, width: 100, height: 100)
@@ -59,7 +58,7 @@ class MargharittaIngredientsViewController: UIViewController {
         button.setTitle("Выбрать", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(takeAnOrderAndSendToCart), for: .touchUpInside)
+        button.addTarget(self, action: #selector(takeAnOrderAndSendToCartAction), for: .touchUpInside)
         return button
     }()
     lazy var addBackButton: UIButton = {
@@ -67,7 +66,7 @@ class MargharittaIngredientsViewController: UIViewController {
         button.frame = CGRect(x: 15, y: 15, width: 50, height: 50)
         button.setTitle("Back", for: .normal)
         button.setTitleColor(UIColor.orange, for: .normal)
-        button.addTarget(self, action: #selector(returnToPizzaMenu), for: .touchUpInside)
+        button.addTarget(self, action: #selector(returnToPizzaMenuAction), for: .touchUpInside)
         return button
     }()
     lazy var ingredienСheeseLabel: UILabel = {
@@ -98,12 +97,15 @@ class MargharittaIngredientsViewController: UIViewController {
         label.font = UIFont(name: "Georgia", size: 15)
         return label
     }()
-
+    // MARK: - Public propertys
+    var pizzaOrder = "Пицца Маргарита с: "
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         cofigureUI()
     }
-    private func cofigureUI() {
+    // MARK: - Public Methods
+    func cofigureUI() {
         view.backgroundColor = .white
         view.addSubview(addMargharitaImageView)
         view.addSubview(addMargharitaLabel)
@@ -118,12 +120,13 @@ class MargharittaIngredientsViewController: UIViewController {
         view.addSubview(ingredienMashroomLabel)
         view.addSubview(ingredienOlivetsLabel)
     }
+    // MARK: Private methods
     // Метод возвращает к каталогу пицц по нажатию кнопки
-    @objc private func returnToPizzaMenu() {
+    @objc private func returnToPizzaMenuAction() {
         dismiss(animated: true, completion: nil)
     }
     // Формирует заказ и переходит в корзину
-    @objc private func takeAnOrderAndSendToCart() {
+    @objc private func takeAnOrderAndSendToCartAction() {
         let ingredientsSwitchesArray = [addCheeseSwitch, addHamSwitch, addMashroomsSwitch, addOliveSwitch]
         let ingredientsArray = [" сыром ", " ветчиной ", " грибами ", " маслинами "]
         for index in 0...3 {
@@ -133,9 +136,18 @@ class MargharittaIngredientsViewController: UIViewController {
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let cartVC = storyboard.instantiateViewController(withIdentifier: "Cart") as? CartViewController else { return }
+        cartVC.delegate = self
         cartVC.myCart = pizzaOrder
         cartVC.modalPresentationStyle = .fullScreen
         show(cartVC, sender: nil)
+    }
+}
+extension MargharittaIngredientsViewController: PopToRootVC {
+    func goToBack() {
+        if let vc = self.presentingViewController as? UINavigationController {
+            dismiss(animated: false, completion: nil)
+            vc.popToRootViewController(animated: false)
+        }
     }
 }
 

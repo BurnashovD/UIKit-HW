@@ -7,9 +7,10 @@
 
 import UIKit
 // Корзина
-class CartViewController: UIViewController {
+final class CartViewController: UIViewController {
+    // MARK: - IBOutlet
     @IBOutlet weak var promocodeCheckLabel: UILabel!
-    var myCart = ""
+    // MARK: - Visual components
     lazy var addYourOrderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 20, y: 150, width: 200, height: 40)
@@ -37,14 +38,14 @@ class CartViewController: UIViewController {
     lazy var createCardPaySwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 600, width: 50, height: 50)
-        switcher.addTarget(self, action: #selector(cardOrCashPay), for: .touchUpInside)
+        switcher.addTarget(self, action: #selector(cardOrCashPayAction), for: .touchUpInside)
         return switcher
     }()
     lazy var createCashPaySwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 650, width: 50, height: 50)
         switcher.setOn(true, animated: true)
-        switcher.addTarget(self, action: #selector(cashOrCardPay), for: .touchUpInside)
+        switcher.addTarget(self, action: #selector(cashOrCardPayAction), for: .touchUpInside)
         return switcher
     }()
     lazy var payButton: UIButton = {
@@ -77,13 +78,18 @@ class CartViewController: UIViewController {
         field.addTarget(self, action: #selector(checkPromocode), for: .editingDidEnd)
         return field
     }()
-
+    // MARK: - Public propertys
+    var myCart = ""
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         cofigureUI()
         hideKeyboardWhenTappedAround()
     }
-    private func cofigureUI() {
+    
+    weak var delegate: PopToRootVC?
+    // MARK: - Public Methods
+    func cofigureUI() {
         title = "Оплата"
         view.addSubview(createNavigationBar)
         view.addSubview(addYourOrderLabel)
@@ -95,28 +101,13 @@ class CartViewController: UIViewController {
         view.addSubview(promocodeTextField)
         promocodeLabel.textColor = .orange
     }
-    // Два метода для свитчей
-    @objc private func cashOrCardPay() {
-        if createCashPaySwitch.isOn {
-            createCardPaySwitch.setOn(false, animated: true)
-            payButton.setTitle("Оплатить наличными", for: .normal)
-        }
-    }
-    @objc private func cardOrCashPay() {
-        if createCardPaySwitch.isOn {
-            createCashPaySwitch.setOn(false, animated: true)
-            payButton.setTitle("Оплатить картой", for: .normal)
-        }
-    }
     // Вызывает алерт при оформлении
     @objc func finishAlert() {
         let paymentAlertController = UIAlertController(title: "Cпасибо за заказ!",
                                                        message: "Курьер приедет в течении часа", preferredStyle: .alert)
         let paymentAlertAction = UIAlertAction(title: "Ok", style: .default) { _ in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let menuVC = storyboard.instantiateViewController(withIdentifier: "Menu") as? MenuViewController else { return }
-            menuVC.modalPresentationStyle = .fullScreen
-            self.show(menuVC, sender: nil)
+            self.dismiss(animated: false, completion: nil)
+            self.delegate?.goToBack()
         }
         let orderReportAction = UIAlertAction(title: "Оставить отзыв", style: .cancel) { _ in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -128,13 +119,27 @@ class CartViewController: UIViewController {
         paymentAlertController.addAction(orderReportAction)
         present(paymentAlertController, animated: true, completion: nil)
     }
+    // MARK: - Private methods
+    // Два метода для свитчей
+    @objc private func cashOrCardPayAction() {
+        if createCashPaySwitch.isOn {
+            createCardPaySwitch.setOn(false, animated: true)
+            payButton.setTitle("Оплатить наличными", for: .normal)
+        }
+    }
+    
+    @objc private func cardOrCashPayAction() {
+        if createCardPaySwitch.isOn {
+            createCashPaySwitch.setOn(false, animated: true)
+            payButton.setTitle("Оплатить картой", for: .normal)
+        }
+    }
     // Проверяет промокод
     @objc func checkPromocode() {
-        if promocodeTextField.text == "ROADMAP" {
-            promocodeCheckLabel.text = "Cкидка 10%"
-        } else {
-            promocodeCheckLabel.text = "Недействительный промокод"
+        guard promocodeTextField.text == "ROADMAP" else {
+           return promocodeCheckLabel.text = "Промокод недействителен"
         }
+        promocodeCheckLabel.text = "Скидка 10%"
     }
 }
 // Расширение чтоб убирать клавиатуру по нажитию на экран

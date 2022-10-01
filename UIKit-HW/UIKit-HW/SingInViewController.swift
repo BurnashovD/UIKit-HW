@@ -7,8 +7,8 @@
 
 import UIKit
 // Отвечает за экран входа
-class SingInViewController: UIViewController, UITextFieldDelegate {
-    // Create logo ImageView
+final class SingInViewController: UIViewController, UITextFieldDelegate {
+    // MARK: - Visual components
     lazy var createPizzaLogoImageView: UIImageView = {
         let imageView  = UIImageView()
         imageView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
@@ -16,7 +16,6 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         imageView.image = UIImage(named: "pizzaLogo")
         return imageView
     }()
-    // Create email and password Labels
     lazy var createEmailLabel: UILabel = {
         let emailLabel = UILabel()
         emailLabel.frame = CGRect(x: 40, y: 350, width: 100, height: 30)
@@ -24,7 +23,6 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         emailLabel.textColor = .orange
         return emailLabel
     }()
-
     lazy var createPasswordLabel: UILabel = {
         let passwordLabel = UILabel()
         passwordLabel.frame = CGRect(x: 40, y: 450, width: 100, height: 30)
@@ -32,7 +30,6 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         passwordLabel.textColor = .orange
         return passwordLabel
     }()
-    // Phone TextField
     lazy var createPhoneNumberTextField: UITextField = {
        let textField = UITextField()
         textField.frame = CGRect(x: 40, y: 385, width: 300, height: 40)
@@ -42,7 +39,6 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         textField.keyboardType = .asciiCapableNumberPad
         return textField
     }()
-    // Password TextField
     lazy var createPasswordtextField: UITextField = {
         let textField = UITextField()
         textField.frame = CGRect(x: 40, y: 485, width: 300, height: 40)
@@ -52,7 +48,6 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         textField.placeholder = "Введите пароль"
         return textField
     }()
-    // Создает кнопку войти
     lazy var createEntryButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
@@ -60,16 +55,17 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         button.setTitle("Войти", for: .normal)
         button.layer.cornerRadius = 10
         button.backgroundColor = .orange
-        button.addTarget(self, action: #selector(segueToMenuVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(segueToMenuVCAction), for: .touchUpInside)
         return button
     }()
-
+// MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         cofigureUI()
         createPhoneNumberTextField.delegate = self
     }
-    private func cofigureUI() {
+    // MARK: - Public Methods
+    func cofigureUI() {
         view.addSubview(createPizzaLogoImageView)
         view.addSubview(createEmailLabel)
         view.addSubview(createPasswordLabel)
@@ -78,7 +74,7 @@ class SingInViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(createEntryButton)
     }
     // Переход к меню
-    @objc func segueToMenuVC() {
+    @objc func segueToMenuVCAction() {
         let menuVC = MenuViewController()
         navigationController?.pushViewController(menuVC, animated: true)
     }

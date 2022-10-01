@@ -7,8 +7,8 @@
 
 import UIKit
 // Выбор ингредиентов Пепперони
-class PepperoniIngredientsViewController: UIViewController {
-    var pizzaOrder = "Пицца Пепперони с: "
+final class PepperoniIngredientsViewController: UIViewController {
+    // MARK: - Visual components
     lazy var addPepperoniImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "pepperoni")
@@ -25,25 +25,21 @@ class PepperoniIngredientsViewController: UIViewController {
         label.font = UIFont(name: "Marker Felt Thin", size: 40)
         return label
     }()
-    // Cheese Switch
     lazy var addCheeseSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 460, width: 100, height: 100)
         return switcher
     }()
-    // Ham Switch
     lazy var addHamSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 520, width: 100, height: 100)
         return switcher
     }()
-    // Mashrooms Switch
     lazy var addMashroomsSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 580, width: 100, height: 100)
         return switcher
     }()
-    // Olive Switch
     lazy var addOliveSwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 300, y: 640, width: 100, height: 100)
@@ -57,7 +53,7 @@ class PepperoniIngredientsViewController: UIViewController {
         button.setTitle("Выбрать", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(takeAnOrderAndSendToCart), for: .touchUpInside)
+        button.addTarget(self, action: #selector(takeAnOrderAndSendToCartAction), for: .touchUpInside)
         return button
     }()
     lazy var addBackButton: UIButton = {
@@ -65,7 +61,7 @@ class PepperoniIngredientsViewController: UIViewController {
         button.frame = CGRect(x: 15, y: 15, width: 50, height: 50)
         button.setTitle("Back", for: .normal)
         button.setTitleColor(UIColor.orange, for: .normal)
-        button.addTarget(self, action: #selector(returnToPizzaMenu), for: .touchUpInside)
+        button.addTarget(self, action: #selector(returnToPizzaMenuAction), for: .touchUpInside)
         return button
     }()
     lazy var ingredienСheeseLabel: UILabel = {
@@ -96,12 +92,15 @@ class PepperoniIngredientsViewController: UIViewController {
         label.font = UIFont(name: "Georgia", size: 15)
         return label
     }()
-    
+    // MARK: - Public propertys
+    var pizzaOrder = "Пицца Пепперони с: "
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         cofigureUI()
     }
-    private func cofigureUI() {
+    // MARK: - Public methods
+    func cofigureUI() {
         view.backgroundColor = .white
         view.addSubview(addPepperoniImageView)
         view.addSubview(addPepperoniLabel)
@@ -116,12 +115,13 @@ class PepperoniIngredientsViewController: UIViewController {
         view.addSubview(ingredienMashroomLabel)
         view.addSubview(ingredienOlivetsLabel)
     }
+    // MARK: - Private methods
     // Возвращает к каталогу пицц по нажатию кнопки
-    @objc private func returnToPizzaMenu() {
+    @objc private func returnToPizzaMenuAction() {
         dismiss(animated: true, completion: nil)
     }
     // Собирает заказ и переходит в корзину
-    @objc private func takeAnOrderAndSendToCart() {
+    @objc private func takeAnOrderAndSendToCartAction() {
         let ingredientsSwitchesArray = [addCheeseSwitch, addHamSwitch, addMashroomsSwitch, addOliveSwitch]
         let ingredientsArray = [" сыром ", " ветчиной ", " грибами ", " маслинами "]
         for index in 0...3 {
