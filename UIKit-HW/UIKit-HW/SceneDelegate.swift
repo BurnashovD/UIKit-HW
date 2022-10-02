@@ -14,20 +14,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         
-        guard let scene = (scene as? UIWindowScene) else { return }
+        guard (scene as? UIWindowScene) != nil else { return }
         
-        let window = UIWindow(windowScene: scene)
         let labelVC = LabelViewController()
+        let tabBarController = UITabBarController()
         
         let navController = UINavigationController(rootViewController: labelVC)
-        let tapBarController = UITabBarController()
         
-        tapBarController.viewControllers = [navController]
         
-        window.rootViewController = tapBarController
-        window.backgroundColor = .white
-        window.makeKeyAndVisible()
-        self.window = window
+        tabBarController.viewControllers = [navController]
+        
+        window?.rootViewController = tabBarController
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
