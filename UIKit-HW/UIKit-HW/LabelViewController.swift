@@ -7,9 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LabelViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configUI()
+    }
+    func configUI() {
+        
+        
+        view.backgroundColor = .lightGray
+        
     }
 }

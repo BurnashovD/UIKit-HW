@@ -14,7 +14,7 @@
 		A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */; };
 		A5CD082328DB9DD5006CBCD8 /* UIKit_HWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082228DB9DD5006CBCD8 /* UIKit_HWTests.swift */; };
 		A5CD082E28DB9DD5006CBCD8 /* UIKit_HWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */; };
-		A5FC9B0828E39F5200075AC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0728E39F5200075AC9 /* ViewController.swift */; };
+		A5FC9B0828E39F5200075AC9 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0728E39F5200075AC9 /* LabelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		A5CD082928DB9DD5006CBCD8 /* UIKit-HWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-HWUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_HWUITests.swift; sourceTree = "<group>"; };
 		A5CD082F28DB9DD5006CBCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5FC9B0728E39F5200075AC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5FC9B0728E39F5200075AC9 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 			children = (
 				A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */,
 				A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */,
-				A5FC9B0728E39F5200075AC9 /* ViewController.swift */,
+				A5FC9B0728E39F5200075AC9 /* LabelViewController.swift */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
 				A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */,
 				A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */,
@@ -284,7 +284,7 @@
 			files = (
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
-				A5FC9B0828E39F5200075AC9 /* ViewController.swift in Sources */,
+				A5FC9B0828E39F5200075AC9 /* LabelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
