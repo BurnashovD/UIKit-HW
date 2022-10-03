@@ -8,8 +8,12 @@
 import UIKit
 // Практика с Активити
 class PracticeActivityViewController: UIViewController {
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var fieldWithPicker: UITextField!
+    
+    // MARK: - Public propeties
     let numbersArray = ["one", "two", "three"]
     let picker = UIPickerView()
     
@@ -19,6 +23,7 @@ class PracticeActivityViewController: UIViewController {
         createPickerView()
         fieldWithPicker.addTarget(self, action: #selector(openActivityOnThird), for: .allEditingEvents)
     }
+    // MARK: - Public methods
     @objc func tapAndShare() {
         let activityVC = UIActivityViewController(activityItems: [UIImage(named: "spider")!, "Share Spider"], applicationActivities: nil)
         present(activityVC, animated: true, completion: nil)
@@ -36,7 +41,7 @@ class PracticeActivityViewController: UIViewController {
         }
     }
 }
-// Расширение для протоколов Пикера
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension PracticeActivityViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

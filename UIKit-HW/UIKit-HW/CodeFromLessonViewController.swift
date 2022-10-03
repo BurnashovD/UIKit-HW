@@ -8,18 +8,20 @@
 import UIKit
 // Повтор кода из урока
 class CodeFromLessonViewController: UIViewController {
-
+    
+    // MARK: - Public propeties
     var buttonShare = UIButton()
     var textField = UITextField()
     var activityViewController: UIActivityViewController? = nil
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         createTextField()
         createButton()
     }
-// MARK: - Methods
-    func createTextField() {
+    // MARK: - Private Methods
+    private func createTextField() {
         textField.frame = CGRect(x: 0, y: 0, width: 280, height: 30)
         textField.center = view.center
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -27,7 +29,7 @@ class CodeFromLessonViewController: UIViewController {
         view.addSubview(textField)
     }
     
-    func createButton() {
+    private func createButton() {
         buttonShare = UIButton(type: .roundedRect)
         buttonShare.frame = CGRect(x: 50, y: 350, width: 280, height: 44)
         buttonShare.setTitle("Расшарить", for: .normal)
@@ -35,7 +37,7 @@ class CodeFromLessonViewController: UIViewController {
         view.addSubview(buttonShare)
     }
     
-    @objc func hendleShare(paramSender: Any) {
+    @objc private func hendleShare(paramSender: Any) {
         let text = textField.text
         
         if text?.count == 0 {
