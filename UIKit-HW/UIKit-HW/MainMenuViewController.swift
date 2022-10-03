@@ -13,7 +13,7 @@ final class MainMenuViewController: UIViewController {
         let button = UIButton()
         button.frame = CGRect(x: 17, y: 45, width: 55, height: 55)
         button.setImage(UIImage(named: "spiderLogo"), for: .normal)
-        button.addTarget(self, action: #selector(segueOnProfileVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(segueOnProfileVCAction), for: .touchUpInside)
         return button
     }()
     lazy var nikeCasualImageView: UIImageView = {
@@ -28,7 +28,7 @@ final class MainMenuViewController: UIViewController {
         button.frame = CGRect(x: 20, y: 430, width: 160, height: 160)
         button.backgroundColor = .secondarySystemFill
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(segueOnNikeVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(segueOnNikeVCAction), for: .touchUpInside)
         return button
     }()
     lazy var rightUpperShooeButton: UIButton = {
@@ -36,7 +36,7 @@ final class MainMenuViewController: UIViewController {
         button.frame = CGRect(x: 210, y: 430, width: 160, height: 160)
         button.backgroundColor = .secondarySystemFill
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(segueOnVansVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(segueOnVansVCAction), for: .touchUpInside)
         return button
     }()
     lazy var leftDownShooeButton: UIButton = {
@@ -44,7 +44,7 @@ final class MainMenuViewController: UIViewController {
         button.frame = CGRect(x: 20, y: 620, width: 160, height: 160)
         button.backgroundColor = .secondarySystemFill
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(segueOnAdidasVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(segueOnAdidasVCAction), for: .touchUpInside)
         return button
     }()
     lazy var rightDownShooeButton: UIButton = {
@@ -52,7 +52,7 @@ final class MainMenuViewController: UIViewController {
         button.frame = CGRect(x: 210, y: 620, width: 160, height: 160)
         button.backgroundColor = .secondarySystemFill
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(segueOnOrangeNikeVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(segueOnOrangeNikeVCAction), for: .touchUpInside)
         return button
     }()
     lazy var nikeShoesImageView: UIImageView = {
@@ -83,16 +83,18 @@ final class MainMenuViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "spiderMan"), for: .normal)
         button.frame = CGRect(x: 270, y: 10, width: 100, height: 100)
-        button.addTarget(self, action: #selector(callActivityview), for: .touchUpInside)
+        button.addTarget(self, action: #selector(callActivityviewAction), for: .touchUpInside)
         return button
     }()
     // MARK: - Public propertys
     var activityViewController: UIActivityViewController? = nil
+    
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
     }
+    
     // MARK: - Public methods
     func configUI() {
         view.addSubview(profileButton)
@@ -107,28 +109,28 @@ final class MainMenuViewController: UIViewController {
         view.addSubview(secondNikeShoesImageView)
         view.addSubview(spiderManImageView)
     }
-    // Method to segue on Nike VeiwController
-    @objc func segueOnNikeVC() {
+    
+    @objc func segueOnNikeVCAction() {
         performSegue(withIdentifier: "nikeSegue", sender: self)
     }
-    // Method to segue on Vans VeiwController
-    @objc func segueOnVansVC() {
+  
+    @objc func segueOnVansVCAction() {
         performSegue(withIdentifier: "vansSegue", sender: self)
     }
-    // Method to segue on Adidas ViewController
-    @objc func segueOnAdidasVC() {
+
+    @objc func segueOnAdidasVCAction() {
         performSegue(withIdentifier: "adidasSegue", sender: self)
     }
-    // Method to segue on Orange Nike VeiwController
-    @objc func segueOnOrangeNikeVC() {
+   
+    @objc func segueOnOrangeNikeVCAction() {
         performSegue(withIdentifier: "orangeNikeSegue", sender: self)
     }
-    // Method to segue on Profile VeiwController
-    @objc func segueOnProfileVC() {
+  
+    @objc func segueOnProfileVCAction() {
         performSegue(withIdentifier: "profile", sender: self)
     }
-    // Open ActivityViewController when touch a spider
-    @objc func callActivityview() {
+  
+    @objc func callActivityviewAction() {
         activityViewController = UIActivityViewController(activityItems: ["Spider Man!!!"], applicationActivities: nil)
         if activityViewController != nil {
         present(activityViewController!, animated: true, completion: nil)

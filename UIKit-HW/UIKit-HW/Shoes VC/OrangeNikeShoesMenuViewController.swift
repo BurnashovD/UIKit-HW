@@ -25,7 +25,7 @@ final class OrangeNikeShoesMenuViewController: UIViewController {
     }()
     lazy var nikeImagesView: UIImageView = {
         let image = UIImageView()
-        image.image = nikeShoesImagesArray[0]
+        image.image = nikeShoesImages[0]
         image.frame = CGRect(x: 0, y: 0, width: 400, height: 300)
         image.center = CGPoint(x: 195, y: 300)
         return image
@@ -95,7 +95,7 @@ final class OrangeNikeShoesMenuViewController: UIViewController {
     }()
     // MARK: - Public propertys
     let differentNikeColors = ["Blue", "Orange", "White"]
-    let nikeShoesImagesArray = [UIImage(named: "blueJordan.jpeg"),
+    let nikeShoesImages = [UIImage(named: "blueJordan.jpeg"),
                                 UIImage(named: "orangeJordan.jpeg"),
                                 UIImage(named: "whiteJordan.jpeg")]
     let sizesArray = Array(38...44)
@@ -121,16 +121,16 @@ final class OrangeNikeShoesMenuViewController: UIViewController {
         sizesPickerView.delegate = self
     }
     // SegmentControl change color of shoes
-    @objc func changeColorOfShoesAction(target: UISegmentedControl) {
+    @objc private func changeColorOfShoesAction(target: UISegmentedControl) {
         if target == colorsSegmentControl {
             let segmentIndex = target.selectedSegmentIndex
-            nikeImagesView.image = nikeShoesImagesArray[segmentIndex]
+            nikeImagesView.image = nikeShoesImages[segmentIndex]
             let whatPersonCheck = target.titleForSegment(at: segmentIndex)
             print(whatPersonCheck ?? "")
         }
     }
     // Alert add to cart or alert choose size
-    @objc func addToCartAlerAction() {
+    @objc private func addToCartAlerAction() {
         if shoesSizeTextField.text != "" {
         let alertController = UIAlertController(title: "Добавить в корзину?", message: nil, preferredStyle: .alert)
         let yesAlertAction = UIAlertAction(title: "Да", style: .default)

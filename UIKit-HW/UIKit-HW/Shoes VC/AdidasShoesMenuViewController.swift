@@ -25,7 +25,7 @@ final class AdidasShoesMenuViewController: UIViewController {
     }()
     lazy var adidasImagesView: UIImageView = {
         let image = UIImageView()
-        image.image = adidasShoesImagesArray[0]
+        image.image = adidasShoesImages[0]
         image.frame = CGRect(x: 0, y: 0, width: 400, height: 300)
         image.center = CGPoint(x: 195, y: 300)
         return image
@@ -93,7 +93,7 @@ final class AdidasShoesMenuViewController: UIViewController {
     }()
     // MARK: - Public propertys
     let differentAdidasColors = ["Black", "White"]
-    let adidasShoesImagesArray = [UIImage(named: "blackAdidasss.jpeg"),
+    let adidasShoesImages = [UIImage(named: "blackAdidasss.jpeg"),
                                   UIImage(named: "whiteAdidass.jpeg")]
     let sizesArray = Array(38...44)
     let sizesPickerView = UIPickerView()
@@ -118,16 +118,16 @@ final class AdidasShoesMenuViewController: UIViewController {
         sizesPickerView.delegate = self
     }
     // SegmentControl change color of shoes
-    @objc func changeColorOfShoesAction(target: UISegmentedControl) {
+    @objc private func changeColorOfShoesAction(target: UISegmentedControl) {
         if target == colorsSegmentControl {
             let segmentIndex = target.selectedSegmentIndex
-            adidasImagesView.image = adidasShoesImagesArray[segmentIndex]
+            adidasImagesView.image = adidasShoesImages[segmentIndex]
             let whatPersonCheck = target.titleForSegment(at: segmentIndex)
             print(whatPersonCheck ?? "")
         }
     }
     // Alert add to cart or alert choose size
-    @objc func addToCartAlerAction() {
+    @objc private func addToCartAlerAction() {
         if shoesSizeTextField.text != "" {
         let alertController = UIAlertController(title: "Добавить в корзину?", message: nil, preferredStyle: .alert)
         let yesAlertAction = UIAlertAction(title: "Да", style: .default)

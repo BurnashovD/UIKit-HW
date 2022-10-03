@@ -25,7 +25,7 @@ final class NikeShoesMenuViewController: UIViewController {
     }()
     lazy var nikeImagesView: UIImageView = {
         let image = UIImageView()
-        image.image = nikeShoesImagesArray[0]
+        image.image = nikeShoesImages[0]
         image.frame = CGRect(x: 0, y: 0, width: 400, height: 300)
         image.center = CGPoint(x: 195, y: 300)
         return image
@@ -92,12 +92,12 @@ final class NikeShoesMenuViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "spiderMan"), for: .normal)
         button.frame = CGRect(x: 270, y: 10, width: 100, height: 100)
-        button.addTarget(self, action: #selector(callActivityView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(callActivityViewAction), for: .touchUpInside)
         return button
     }()
     // MARK: - Public propertys
     let differentNikeColors = ["Black", "White", "Green"]
-    let nikeShoesImagesArray = [UIImage(named: "blackNikeee.png"),
+    let nikeShoesImages = [UIImage(named: "blackNikeee.png"),
                                 UIImage(named: "whiteNikeShoes.jpeg"),
                                 UIImage(named: "greenNike.jpeg")]
     let sizesArray = Array(38...44)
@@ -126,13 +126,13 @@ final class NikeShoesMenuViewController: UIViewController {
     @objc func changeColorOfShoesAction(target: UISegmentedControl) {
         if target == colorsSegmentControl {
             let segmentIndex = target.selectedSegmentIndex
-            nikeImagesView.image = nikeShoesImagesArray[segmentIndex]
+            nikeImagesView.image = nikeShoesImages[segmentIndex]
             let whatPersonCheck = target.titleForSegment(at: segmentIndex)
             print(whatPersonCheck ?? "")
         }
     }
     // Alert add to cart or alert choose size
-    @objc func addToCartAlerAction() {
+    @objc private func addToCartAlerAction() {
         if shoesSizeTextField.text != "" {
         let alertController = UIAlertController(title: "Добавить в корзину?", message: nil, preferredStyle: .alert)
         let yesAlertAction = UIAlertAction(title: "Да", style: .default)
@@ -148,7 +148,7 @@ final class NikeShoesMenuViewController: UIViewController {
         }
     }
     // Call activity view when touch spider
-    @objc func callActivityView() {
+    @objc private func callActivityViewAction() {
         let facebookURL = NSURL(string: "https://ru-ru.facebook.com/")
         let activityViewController = UIActivityViewController(activityItems: ["\(nameOfShoesLabel.text ?? "nil") \(modelOfShoesLabel.text ?? "nil") - Spider Shoes", facebookURL ?? "nil"], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
