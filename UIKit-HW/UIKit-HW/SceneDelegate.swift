@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navController = UINavigationController(rootViewController: labelVC)
         
-        
         tabBarController.viewControllers = [navController]
         
         window?.rootViewController = tabBarController
