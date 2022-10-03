@@ -14,12 +14,14 @@ final class TimerViewController: UIViewController {
     @IBOutlet weak var stopView: UIView!
     @IBOutlet weak var startView: UIView!
     @IBOutlet weak var timerPicker: UIPickerView!
+    
     // MARK: - Public propetys
     var hours: Int = 0
     var minuties: Int = 0
     var seconds: Int = 0
     var timer = Timer()
     var isTimerRunning = false
+    
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,7 @@ final class TimerViewController: UIViewController {
         destination.minuties = minuties
     }
 }
-// MARK: - UIPickerView extension
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
