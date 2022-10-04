@@ -9,7 +9,7 @@ import UIKit
 // Класс с конфигурацией Лейбла
 final class LabelViewController: UIViewController {
     // MARK: - Visual components
-    lazy var differentTextLabel: UILabel = {
+    private lazy var differentTextLabel: UILabel = {
         let label = UILabel()
         let fontValue = CGFloat(fontSizeSlider.value)
         label.frame = CGRect(x: 0, y: 0, width: 300, height: 170)
@@ -24,7 +24,7 @@ final class LabelViewController: UIViewController {
         return label
     }()
     
-    lazy var fontSizeSlider: UISlider = {
+    private lazy var fontSizeSlider: UISlider = {
         let slider = UISlider()
         slider.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
         slider.center = CGPoint(x: 200, y: 600)
@@ -37,7 +37,7 @@ final class LabelViewController: UIViewController {
         return slider
     }()
     
-    lazy var chooseTextColorTextField: UITextField = {
+    private lazy var chooseTextColorTextField: UITextField = {
         let field = UITextField()
         field.frame = CGRect(x: 0, y: 0, width: 230, height: 35)
         field.center = CGPoint(x: 200, y: 650)
@@ -48,7 +48,7 @@ final class LabelViewController: UIViewController {
         return field
     }()
     
-    let chooseLinesTextField: UITextField = {
+    private let chooseLinesTextField: UITextField = {
         let field = UITextField()
         field.frame = CGRect(x: 0, y: 0, width: 230, height: 35)
         field.center = CGPoint(x: 200, y: 700)
@@ -59,13 +59,13 @@ final class LabelViewController: UIViewController {
         return field
     }()
     
-    // MARK: - Public properties
-    let colorsArray = ["blue", "red", "gray", "orange", "yellow", "black"]
-    let linesNumbersArray = Array(0...10)
-    let labelTextColorPickerView = UIPickerView()
-    let labelLinesPickerView = UIPickerView()
+    // MARK: - Private properties
+    private let colors = ["blue", "red", "gray", "orange", "yellow", "black"]
+    private let linesNumbers = Array(0...10)
+    private let labelTextColorPickerView = UIPickerView()
+    private let labelLinesPickerView = UIPickerView()
     
-    // MARK: - viewDidLoad
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -101,7 +101,7 @@ final class LabelViewController: UIViewController {
                                                             target: self, action: #selector(callAlertAction))
     }
     
-    @objc func callAlertAction() {
+    @objc private func callAlertAction() {
         let addTextAlertController = UIAlertController(title: "Введите текст", message: nil, preferredStyle: .alert)
         let addTextAlertAction = UIAlertAction(title: "Готово", style: .default) { _ in
             self.differentTextLabel.text = addTextAlertController.textFields?.first?.text
@@ -125,9 +125,9 @@ extension LabelViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return linesNumbersArray.count
+            return linesNumbers.count
         case 2:
-            return colorsArray.count
+            return colors.count
         default:
             return 1
         }
@@ -136,9 +136,9 @@ extension LabelViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 1:
-            return String(linesNumbersArray[row])
+            return String(linesNumbers[row])
         case 2:
-            return colorsArray[row]
+            return colors[row]
         default:
             return "Not found"
         }
@@ -147,12 +147,12 @@ extension LabelViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            chooseLinesTextField.text = String(linesNumbersArray[row])
-            differentTextLabel.numberOfLines = linesNumbersArray[row]
+            chooseLinesTextField.text = String(linesNumbers[row])
+            differentTextLabel.numberOfLines = linesNumbers[row]
             chooseLinesTextField.resignFirstResponder()
         case 2:
-            chooseTextColorTextField.text = colorsArray[row]
-            differentTextLabel.textColor = UIColor(named: colorsArray[row])
+            chooseTextColorTextField.text = colors[row]
+            differentTextLabel.textColor = UIColor(named: colors[row])
             chooseTextColorTextField.resignFirstResponder()
         default:
             return
