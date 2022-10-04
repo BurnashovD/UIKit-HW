@@ -53,7 +53,6 @@ extension SingInViewController: UITextFieldDelegate {
         switch textField {
         case loginTextField:
             passwordTextField.becomeFirstResponder()
-            print("Hi")
         case passwordTextField:
             textField.resignFirstResponder()
         default:

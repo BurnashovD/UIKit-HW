@@ -52,7 +52,6 @@ extension RegistarcionViewController: UITextFieldDelegate {
         switch textField {
         case nameTextField:
             loginTextField.becomeFirstResponder()
-            print("Hi")
         case loginTextField:
             passwordTextField.becomeFirstResponder()
         case passwordTextField:
