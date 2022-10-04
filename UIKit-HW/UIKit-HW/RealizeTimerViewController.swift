@@ -13,13 +13,15 @@ final class RealizeTimerViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     
-    // MARK: - Public propertys
-    var timer = Timer()
-    var isTimeRunning = false
+    // MARK: - Public methods
     var seconds = 0
     var minuties = 0
     
-    // MARK: - viewDidLoad
+    // MARK: - Private propertys
+    private var timer = Timer()
+    private var isTimeRunning = false
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -31,15 +33,22 @@ final class RealizeTimerViewController: UIViewController {
         stopButton.layer.cornerRadius = 0.5 * stopButton.bounds.size.width
         stopButton.layer.borderColor = UIColor.black.cgColor
         stopButton.layer.borderWidth = 2
-        stopButton.addTarget(self, action: #selector(returnToTimerMenu), for: .touchUpOutside)
+        stopButton.addTarget(self, action: #selector(returnToTimerMenuAction), for: .touchUpOutside)
     }
     
-    func runSecondsTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateSecondsTimer), userInfo: nil, repeats: true)
+    // MARK: - Private methods
+    private func runSecondsTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateSecondsTimerAction), userInfo: nil, repeats: true)
         isTimeRunning = true
     }
     
-    @objc func updateSecondsTimer() {
+    private func timeString(time: TimeInterval) -> String {
+        let seconds = Int(time) % 60
+        
+        return String(format: "%02i:%02i", minuties, seconds)
+    }
+    
+    @objc private func updateSecondsTimerAction() {
         if seconds < 1 {
             timer.invalidate()
         } else {
@@ -48,14 +57,7 @@ final class RealizeTimerViewController: UIViewController {
         }
     }
     
-    func timeString(time: TimeInterval) -> String {
-        let minuties = minuties
-        let seconds = Int(time) % 60
-        
-        return String(format: "%02i:%02i", minuties, seconds)
-    }
-
-    @objc func returnToTimerMenu() {
+    @objc private func returnToTimerMenuAction() {
         dismiss(animated: true, completion: nil)
     }
 }

@@ -19,10 +19,12 @@ final class TimerViewController: UIViewController {
     var hours: Int = 0
     var minuties: Int = 0
     var seconds: Int = 0
-    var timer = Timer()
-    var isTimerRunning = false
     
-    // MARK: - viewDidLoad
+    // MARK: - Private methods
+    private var timer = Timer()
+    private var isTimerRunning = false
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -43,10 +45,10 @@ final class TimerViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "Timer" else { return }
-        guard let destination = segue.destination as? RealizeTimerViewController else { return }
-        destination.seconds = seconds
-        destination.minuties = minuties
+        let destination = segue.destination as? RealizeTimerViewController
+        guard segue.identifier == "Timer" && destination != nil else { return }
+        destination?.seconds = seconds
+        destination?.minuties = minuties
     }
 }
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
@@ -93,6 +95,6 @@ extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-                 return pickerView.frame.size.width/3
+        return pickerView.frame.size.width/3
     }
 }

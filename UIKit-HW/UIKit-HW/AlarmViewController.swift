@@ -8,7 +8,8 @@
 import UIKit
 // Будильник
 final class AlarmViewController: UIViewController {
-
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
