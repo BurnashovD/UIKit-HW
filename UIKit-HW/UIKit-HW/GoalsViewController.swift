@@ -6,13 +6,7 @@
 //
 
 import UIKit
-// MARK: - Constants enum
-private extension GoalsViewController {
-    enum Constants {
-        static let valutaPickerView = UIPickerView()
-        static let differentValuta = ["₽", "€", "$", "₺"]
-    }
-}
+
 // Класс конвертации и подсчета суммы до цели
 final class GoalsViewController: UIViewController {
     // MARK: - IBOutlets
@@ -25,6 +19,7 @@ final class GoalsViewController: UIViewController {
     
     // MARK: - Private properties
     private var convertedValue = 0
+    private let valutaPickerView = UIPickerView()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -34,9 +29,9 @@ final class GoalsViewController: UIViewController {
     
     // MARK: - Public methods
     func configUI() {
-        Constants.valutaPickerView.delegate = self
-        Constants.valutaPickerView.dataSource = self
-        valutaTextField.inputView = Constants.valutaPickerView
+        valutaPickerView.delegate = self
+        valutaPickerView.dataSource = self
+        valutaTextField.inputView = valutaPickerView
         moneySlider.addTarget(self, action: #selector(changeValueAction), for: .allEvents)
         moneySlider.addTarget(self, action: #selector(convertMoneyAction), for: .allEvents)
         mounthsSegmentControl.addTarget(self, action: #selector(selectMounthsCountAction), for: .allEvents)
@@ -77,6 +72,12 @@ final class GoalsViewController: UIViewController {
         default:
             return
         }
+    }
+}
+
+private extension GoalsViewController {
+    enum Constants {
+        static let differentValuta = ["₽", "€", "$", "₺"]
     }
 }
 

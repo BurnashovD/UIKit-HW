@@ -41,9 +41,11 @@ final class SingInViewController: UIViewController {
     }
     
     @objc private func checkUsersDataAction() {
-        guard usersData.contains(loginTextField.text!) else {return}
-        guard usersData.contains(passwordTextField.text!) else {return}
+        if let login = loginTextField.text, let password = passwordTextField.text {
+        guard usersData.contains(login) else {return}
+        guard usersData.contains(password) else {return}
         performSegue(withIdentifier: "AllGood", sender: self)
+        }
     }
 }
 
