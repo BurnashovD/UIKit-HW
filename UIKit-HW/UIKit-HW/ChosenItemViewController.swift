@@ -26,6 +26,7 @@ final class ChosenItemViewController: UIViewController {
         image.frame = CGRect(x: 0, y: 0, width: 350, height: 200)
         image.center = CGPoint(x: view.center.x, y: 250)
         image.image = UIImage(named: productImage)
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
