@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A59E420328EF0F9F00E364C1 /* MacCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E420228EF0F9F00E364C1 /* MacCaseViewController.swift */; };
 		A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */; };
 		A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */; };
 		A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081128DB9DD4006CBCD8 /* Main.storyboard */; };
@@ -14,7 +15,11 @@
 		A5CD081828DB9DD5006CBCD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */; };
 		A5CD082328DB9DD5006CBCD8 /* UIKit_HWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082228DB9DD5006CBCD8 /* UIKit_HWTests.swift */; };
 		A5CD082E28DB9DD5006CBCD8 /* UIKit_HWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */; };
-		A5FC9B0828E39F5200075AC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0728E39F5200075AC9 /* ViewController.swift */; };
+		A5D3C3B628EF16A40063B090 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3C3B528EF16A40063B090 /* CartViewController.swift */; };
+		A5D3C3B828EF16BA0063B090 /* ForMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3C3B728EF16BA0063B090 /* ForMeViewController.swift */; };
+		A5D3C3BA28EF16C20063B090 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3C3B928EF16C20063B090 /* BuyViewController.swift */; };
+		A5D3C3BD28EF364F0063B090 /* ChosenItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3C3BC28EF364F0063B090 /* ChosenItemViewController.swift */; };
+		A5FC9B0828E39F5200075AC9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC9B0728E39F5200075AC9 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A59E420228EF0F9F00E364C1 /* MacCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacCaseViewController.swift; sourceTree = "<group>"; };
 		A5CD080828DB9DD4006CBCD8 /* UIKit-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +54,11 @@
 		A5CD082928DB9DD5006CBCD8 /* UIKit-HWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-HWUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD082D28DB9DD5006CBCD8 /* UIKit_HWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_HWUITests.swift; sourceTree = "<group>"; };
 		A5CD082F28DB9DD5006CBCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5FC9B0728E39F5200075AC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5D3C3B528EF16A40063B090 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		A5D3C3B728EF16BA0063B090 /* ForMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMeViewController.swift; sourceTree = "<group>"; };
+		A5D3C3B928EF16C20063B090 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		A5D3C3BC28EF364F0063B090 /* ChosenItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenItemViewController.swift; sourceTree = "<group>"; };
+		A5FC9B0728E39F5200075AC9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +111,9 @@
 			children = (
 				A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */,
 				A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */,
-				A5FC9B0728E39F5200075AC9 /* ViewController.swift */,
+				A59E420228EF0F9F00E364C1 /* MacCaseViewController.swift */,
+				A5D3C3BC28EF364F0063B090 /* ChosenItemViewController.swift */,
+				A5D3C3BB28EF16DF0063B090 /* TabBarVC */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
 				A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */,
 				A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */,
@@ -126,6 +138,17 @@
 				A5CD082F28DB9DD5006CBCD8 /* Info.plist */,
 			);
 			path = "UIKit-HWUITests";
+			sourceTree = "<group>";
+		};
+		A5D3C3BB28EF16DF0063B090 /* TabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5D3C3B528EF16A40063B090 /* CartViewController.swift */,
+				A5D3C3B728EF16BA0063B090 /* ForMeViewController.swift */,
+				A5D3C3B928EF16C20063B090 /* BuyViewController.swift */,
+				A5FC9B0728E39F5200075AC9 /* SearchViewController.swift */,
+			);
+			path = TabBarVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D3C3BD28EF364F0063B090 /* ChosenItemViewController.swift in Sources */,
+				A5D3C3B828EF16BA0063B090 /* ForMeViewController.swift in Sources */,
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
-				A5FC9B0828E39F5200075AC9 /* ViewController.swift in Sources */,
+				A5D3C3B628EF16A40063B090 /* CartViewController.swift in Sources */,
+				A59E420328EF0F9F00E364C1 /* MacCaseViewController.swift in Sources */,
+				A5D3C3BA28EF16C20063B090 /* BuyViewController.swift in Sources */,
+				A5FC9B0828E39F5200075AC9 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
