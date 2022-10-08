@@ -10,11 +10,11 @@ import UIKit
 final class TimerViewController: UIViewController {
 
     // MARK: - IBOutlet
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var stopButton: UIButton!
-    @IBOutlet weak var stopView: UIView!
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var startView: UIView!
+    @IBOutlet private weak var timerLabel: UILabel!
+    @IBOutlet private weak var stopButton: UIButton!
+    @IBOutlet private weak var stopView: UIView!
+    @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet private weak var startView: UIView!
     
     // MARK: - Private properties
     private var timer = Timer()
