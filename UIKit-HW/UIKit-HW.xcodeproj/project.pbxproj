@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A578176B28FC3D8200B884E8 /* NSLayoutConstraintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A578176A28FC3D8200B884E8 /* NSLayoutConstraintViewController.swift */; };
 		A578176D28FC9F0C00B884E8 /* NSLayoutAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A578176C28FC9F0C00B884E8 /* NSLayoutAnchorViewController.swift */; };
+		A578176F28FCABFC00B884E8 /* OnStackViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A578176E28FCABFC00B884E8 /* OnStackViewViewController.swift */; };
 		A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */; };
 		A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */; };
 		A5CD081328DB9DD4006CBCD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CD081128DB9DD4006CBCD8 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		A578176A28FC3D8200B884E8 /* NSLayoutConstraintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintViewController.swift; sourceTree = "<group>"; };
 		A578176C28FC9F0C00B884E8 /* NSLayoutAnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutAnchorViewController.swift; sourceTree = "<group>"; };
+		A578176E28FCABFC00B884E8 /* OnStackViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnStackViewViewController.swift; sourceTree = "<group>"; };
 		A5CD080828DB9DD4006CBCD8 /* UIKit-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CD080B28DB9DD4006CBCD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5CD080D28DB9DD4006CBCD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				A5FC9B0728E39F5200075AC9 /* TrafficLightViewController.swift */,
 				A578176A28FC3D8200B884E8 /* NSLayoutConstraintViewController.swift */,
 				A578176C28FC9F0C00B884E8 /* NSLayoutAnchorViewController.swift */,
+				A578176E28FCABFC00B884E8 /* OnStackViewViewController.swift */,
 				A5CD081128DB9DD4006CBCD8 /* Main.storyboard */,
 				A5CD081428DB9DD5006CBCD8 /* Assets.xcassets */,
 				A5CD081628DB9DD5006CBCD8 /* LaunchScreen.storyboard */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A578176B28FC3D8200B884E8 /* NSLayoutConstraintViewController.swift in Sources */,
+				A578176F28FCABFC00B884E8 /* OnStackViewViewController.swift in Sources */,
 				A578176D28FC9F0C00B884E8 /* NSLayoutAnchorViewController.swift in Sources */,
 				A5CD080C28DB9DD4006CBCD8 /* AppDelegate.swift in Sources */,
 				A5CD080E28DB9DD4006CBCD8 /* SceneDelegate.swift in Sources */,
