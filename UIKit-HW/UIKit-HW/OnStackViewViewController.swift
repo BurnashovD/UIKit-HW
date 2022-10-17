@@ -58,11 +58,11 @@ final class OnStackViewViewController: UIViewController {
     // MARK: - Private methods
     private func configUI() {
         configStackView()
-        view.addSubview(traficLightStackView)
         createStackViewConstraints()
     }
     
     private func configStackView() {
+        view.addSubview(traficLightStackView)
         traficLightStackView.addArrangedSubview(redView)
         traficLightStackView.addArrangedSubview(yellowView)
         traficLightStackView.addArrangedSubview(greenView)

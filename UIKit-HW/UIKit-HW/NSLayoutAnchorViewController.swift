@@ -46,14 +46,18 @@ final class NSLayoutAnchorViewController: UIViewController {
     
     // MARK: - Private methods
     private func configUI() {
-        view.addSubview(blackView)
-        view.addSubview(redView)
-        view.addSubview(yellowView)
-        view.addSubview(greenView)
+        addSubviews()
         createBlackViewConstraints()
         createRedViewConstraints()
         createYellowViewConstraints()
         createGreenViewConstraints()
+    }
+    
+    private func addSubviews() {
+        view.addSubview(blackView)
+        view.addSubview(redView)
+        view.addSubview(yellowView)
+        view.addSubview(greenView)
     }
     
     private func createBlackViewConstraints() {
