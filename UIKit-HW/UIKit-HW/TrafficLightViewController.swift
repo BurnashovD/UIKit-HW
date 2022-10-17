@@ -7,8 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+// Светофор в сториборде
+final class TrafficLightSBViewController: UIViewController {
 
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
